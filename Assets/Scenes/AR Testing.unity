@@ -4390,7 +4390,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010006079}
-  - component: {fileID: 2010006078}
   m_Layer: 0
   m_Name: Enemy Spawner Manager
   m_TagString: Untagged
@@ -4398,25 +4397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2010006078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010006077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ee60b1e93a0c449933c4109c868e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnInterval: 1
-  maxEnemyBudget: 100
-  difficultyIncrease: 5
-  unlockedEnemyList:
-  - {fileID: 6334665677170609285, guid: 7d46a40b0f7d3b84eb79e4167d0f4f88, type: 3}
-  lockedEnemyList:
-  - {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
 --- !u!4 &2010006079
 Transform:
   m_ObjectHideFlags: 0
