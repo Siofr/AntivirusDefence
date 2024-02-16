@@ -29,7 +29,7 @@ public class TurretBehaviour : MonoBehaviour
     void Update()
     {
         // If the enemy List is greater than 0, meaning an enemy is present
-        if (enemyList.Count > 0)
+        if (enemyList.Count - 1 > 0)
         {
             // If the first item of the list is null remove it (Cleans up killed enemies)
             if (enemyList[0] == null)
@@ -76,7 +76,6 @@ public class TurretBehaviour : MonoBehaviour
         // Rate of fire stuff
         if (Time.time > nextShot)
         {
-            Debug.Log("Turret Shooting");
             nextShot = Time.time + stats.defenceFireRate;
 
             // Deal damage to the target

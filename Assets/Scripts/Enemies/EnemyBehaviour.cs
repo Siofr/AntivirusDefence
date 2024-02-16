@@ -30,6 +30,13 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         }
     }
 
+    public void KillObject()
+    {
+        Destroy(gameObject);
+    }
+
+    // Interfaces
+
     public void DealDamage(float damage)
     {
         health -= damage;
@@ -38,10 +45,5 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             KillObject();
         }
-    }
-
-    public void KillObject()
-    {
-        Destroy(gameObject);
     }
 }
