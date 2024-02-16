@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int difficultyIncrease;
     private int currentEnemyBudget;
 
-    private int currentWave;
+    private int currentWave = 1;
 
     // Enemies that can be spawned, spawner will select from this list when spawning enemies
     [SerializeField] private List<GameObject> unlockedEnemyList = new List<GameObject>();
@@ -41,10 +41,10 @@ public class EnemySpawner : MonoBehaviour
     {
         if (isSpawning && currentEnemyBudget >= 0)
         {
-            if (nextSpawn > Time.time)
+            if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnInterval;
-                Instantiate(unlockedEnemyList[Random.Range(0, unlockedEnemyList.Count - 1)], spawnLocations[Random.Range(0, spawnLocations.Count - 1)], Quaternion.identity);
+                Instantiate(unlockedEnemyList[Random.Range(0, unlockedEnemyList.Count)], spawnLocations[Random.Range(0, spawnLocations.Count)], Quaternion.identity);
             }
         }
 
