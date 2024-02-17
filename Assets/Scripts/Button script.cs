@@ -13,7 +13,7 @@ public class Buttonscript : MonoBehaviour
     public GameObject menu;
     private Touch touchInput;
     private float timeTouchEnded;
-    public Button adwareButton, test1Button, test2Button;
+    public Button test1Button, test2Button, test3Button;
 
     // Update is called once per frame
     void Update()
@@ -31,52 +31,43 @@ public class Buttonscript : MonoBehaviour
                     if (hit.transform.position == cube.transform.position)
                     {
                         menu.SetActive(true);
-                        adwareButton.onClick.AddListener(adwareInstantiate);
-                        test1Button.onClick.AddListener(malwareInstantiate);
-                        test2Button.onClick.AddListener(spywareInstantiate);
+                        test1Button.onClick.AddListener(test1Instantiate);
+                        test2Button.onClick.AddListener(test2Instantiate);
+                        test3Button.onClick.AddListener(test3Instantiate);
                     }
                 }
             }
-            
-
-            /*touchInput = Input.GetTouch(0);
-            if (touchInput.phase == TouchPhase.Ended)
-            {
-                timeTouchEnded = Time.time;
-                GameObject h = Instantiate(tower, cube.transform.position, Quaternion.identity);
-                h.transform.localScale = new Vector3(20, 20, 20);
-            }*/
         }
     }
 
-    void adwareInstantiate()
+    void test1Instantiate()
     {
         GameObject h = Instantiate(tower, cube.transform.position, Quaternion.identity);
         h.transform.localScale = new Vector3(20, 20, 20);
         menu.SetActive(false);
         cube.SetActive(false);
-        adwareButton.onClick.RemoveListener(adwareInstantiate);
-        test1Button.onClick.RemoveListener(malwareInstantiate);
-        test2Button.onClick.RemoveListener(spywareInstantiate);
+        test1Button.onClick.RemoveListener(test1Instantiate);
+        test2Button.onClick.RemoveListener(test2Instantiate);
+        test3Button.onClick.RemoveListener(test3Instantiate);
     }
-    void malwareInstantiate()
+    void test2Instantiate()
     {
         GameObject h = Instantiate(tower1, cube.transform.position, Quaternion.identity);
         h.transform.localScale = new Vector3(20, 20, 20);
         menu.SetActive(false);
         cube.SetActive(false);
-        adwareButton.onClick.RemoveListener(adwareInstantiate);
-        test1Button.onClick.RemoveListener(malwareInstantiate);
-        test2Button.onClick.RemoveListener(spywareInstantiate);
+        test1Button.onClick.RemoveListener(test1Instantiate);
+        test2Button.onClick.RemoveListener(test2Instantiate);
+        test3Button.onClick.RemoveListener(test3Instantiate);
     }
-    void spywareInstantiate()
+    void test3Instantiate()
     {
         GameObject h = Instantiate(tower2, cube.transform.position, Quaternion.identity);
         h.transform.localScale = new Vector3(20, 20, 20);
         menu.SetActive(false);
         cube.SetActive(false);
-        adwareButton.onClick.RemoveListener(adwareInstantiate);
-        test1Button.onClick.RemoveListener(malwareInstantiate);
-        test2Button.onClick.RemoveListener(spywareInstantiate);
+        test1Button.onClick.RemoveListener(test1Instantiate);
+        test2Button.onClick.RemoveListener(test2Instantiate);
+        test3Button.onClick.RemoveListener(test3Instantiate);
     }
 }

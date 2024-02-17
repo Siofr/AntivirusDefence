@@ -441,14 +441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b5c0994e63e64395832c7369dca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
-  tower1: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
-  tower2: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
+  tower1: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower2: {fileID: 7076452770439973219, guid: e657aaab215c52c43ba1598f23162c2f, type: 3}
   cube: {fileID: 453361395}
   menu: {fileID: 955707244}
-  adwareButton: {fileID: 1518020459}
-  test1Button: {fileID: 36386160}
-  test2Button: {fileID: 1945704429}
+  test1Button: {fileID: 1518020459}
+  test2Button: {fileID: 36386160}
+  test3Button: {fileID: 1945704429}
 --- !u!1 &564442583
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,14 +865,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b5c0994e63e64395832c7369dca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
-  tower1: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
-  tower2: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
+  tower1: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower2: {fileID: 7076452770439973219, guid: e657aaab215c52c43ba1598f23162c2f, type: 3}
   cube: {fileID: 1048647564}
   menu: {fileID: 955707244}
-  adwareButton: {fileID: 1518020459}
-  test1Button: {fileID: 36386160}
-  test2Button: {fileID: 1945704429}
+  test1Button: {fileID: 1518020459}
+  test2Button: {fileID: 36386160}
+  test3Button: {fileID: 1945704429}
 --- !u!65 &1048647566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1108,7 +1108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Adware
+  m_Text: test1
 --- !u!222 &1138845112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1149,14 +1149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b5c0994e63e64395832c7369dca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
-  tower1: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
-  tower2: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
+  tower1: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower2: {fileID: 7076452770439973219, guid: e657aaab215c52c43ba1598f23162c2f, type: 3}
   cube: {fileID: 1251975372}
   menu: {fileID: 955707244}
-  adwareButton: {fileID: 1518020459}
-  test1Button: {fileID: 36386160}
-  test2Button: {fileID: 1945704429}
+  test1Button: {fileID: 1518020459}
+  test2Button: {fileID: 36386160}
+  test3Button: {fileID: 1945704429}
 --- !u!65 &1251975374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1343,14 +1343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b5c0994e63e64395832c7369dca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
-  tower1: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
-  tower2: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
+  tower1: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower2: {fileID: 7076452770439973219, guid: e657aaab215c52c43ba1598f23162c2f, type: 3}
   cube: {fileID: 1454022790}
   menu: {fileID: 955707244}
-  adwareButton: {fileID: 1518020459}
-  test1Button: {fileID: 36386160}
-  test2Button: {fileID: 1945704429}
+  test1Button: {fileID: 1518020459}
+  test2Button: {fileID: 36386160}
+  test3Button: {fileID: 1945704429}
 --- !u!65 &1454022792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Malware
+  m_Text: test2
 --- !u!222 &1483541712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1844,14 +1844,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b5c0994e63e64395832c7369dca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
-  tower1: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
-  tower2: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower: {fileID: 5285338269333790505, guid: 97c49953cc74196409ac150744ec6529, type: 3}
+  tower1: {fileID: 3683000228681562870, guid: 118cbe6ddd928774f9d5bce8ba0b0e4f, type: 3}
+  tower2: {fileID: 7076452770439973219, guid: e657aaab215c52c43ba1598f23162c2f, type: 3}
   cube: {fileID: 1793932715}
   menu: {fileID: 955707244}
-  adwareButton: {fileID: 1518020459}
-  test1Button: {fileID: 36386160}
-  test2Button: {fileID: 1945704429}
+  test1Button: {fileID: 1518020459}
+  test2Button: {fileID: 36386160}
+  test3Button: {fileID: 1945704429}
 --- !u!65 &1793932717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2234,7 +2234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spyware
+  m_Text: test3
 --- !u!222 &2106129901
 CanvasRenderer:
   m_ObjectHideFlags: 0
