@@ -122,6 +122,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: e39b9ea5c517aaa42a8b99670b5521cb, type: 2}
+  playEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8878134129403207927}
+        m_TargetAssemblyTypeName: AdwareEffect, Assembly-CSharp
+        m_MethodName: PopupAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8878134129403207927
 MonoBehaviour:
   m_ObjectHideFlags: 0

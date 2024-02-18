@@ -14,7 +14,7 @@ public class AdwareEffect : MonoBehaviour
         adwarePopups = GameObject.FindWithTag("Adware").transform;
     }
 
-    void OnDestroy()
+    public void PopupAttack()
     {
         SFXManager.instance.PlaySFX(errorSound, transform, 0.75f);
 
@@ -26,7 +26,8 @@ public class AdwareEffect : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < inactivePopups.Count; i++) {
+        for (int i = 0; i < inactivePopups.Count; i++)
+        {
 
             if (strength <= 0)
             {
@@ -39,5 +40,7 @@ public class AdwareEffect : MonoBehaviour
 
             strength--;
         }
+
+        Destroy(gameObject);
     }
 }

@@ -50,6 +50,10 @@ public class TurretBehaviour : MonoBehaviour
                 targetInterface = target.gameObject.GetComponent<IDamageable>();
             }
         }
+        else
+        {
+            laserSight.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

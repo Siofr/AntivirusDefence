@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AdwareStats
   m_EditorClassIdentifier: 
   enemyName: Adware
+  effectToPlay: 1
   enemyCost: 10
   moveSpeed: 4
-  health: 1000
+  health: 30
   damage: 0
