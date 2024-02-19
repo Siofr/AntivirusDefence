@@ -15,6 +15,7 @@ MonoBehaviour:
   enemyName: Adware
   effectToPlay: 1
   enemyCost: 10
+  spawnWeight: 0.3
   moveSpeed: 4
   health: 30
   damage: 0

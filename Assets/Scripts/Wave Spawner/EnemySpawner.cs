@@ -29,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     // I'm doing this so I can avoid using GetComponent everytime I spawn an enemy cus GetComponent can be expensive
     public List<int> enemyCosts = new List<int>();
+    public List<float> enemyWeights = new List<float>();
 
     int lockedEnemyListIndex;
 
@@ -51,11 +52,13 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < unlockedEnemyList.Count; i++)
         {
             enemyCosts.Add(unlockedEnemyList[i].GetComponent<EnemyBehaviour>().enemyStats.enemyCost);
+            enemyWeights.Add(unlockedEnemyList[i].GetComponent<EnemyBehaviour>().enemyStats.spawnWeight);
         }
 
         for (int i = 0; i < lockedEnemyList.Count; i++)
         {
             enemyCosts.Add(lockedEnemyList[i].GetComponent<EnemyBehaviour>().enemyStats.enemyCost);
+            enemyWeights.Add(lockedEnemyList[i].GetComponent<EnemyBehaviour>().enemyStats.spawnWeight);
         }
     }
 
@@ -66,7 +69,8 @@ public class EnemySpawner : MonoBehaviour
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnInterval;
-                int randomIndex = Random.Range(0, unlockedEnemyList.Count);
+                int randomIndex = GetRandomWeightedIndex(enemyWeights.GetRange(0, unlockedEnemyList.Count));
+                Debug.Log(randomIndex);
                 Instantiate(unlockedEnemyList[randomIndex], spawnLocations[Random.Range(0, spawnLocations.Count)], Quaternion.identity);
                 currentEnemyBudget -= enemyCosts[randomIndex];
             }
@@ -77,6 +81,31 @@ public class EnemySpawner : MonoBehaviour
             waveOver.Invoke();
         }
     }
+
+    public int GetRandomWeightedIndex(List<float> weights)
+    {
+        float weightSum = 0f;
+        int index = 0;
+        int lastIndex = weights.Count - 1;
+
+        for (int i = 0; i < weights.Count; ++i)
+        {
+            weightSum += weights[i];
+        }
+
+        while (index < lastIndex)
+        {
+            if (Random.Range(0, weightSum) < weights[index])
+            {
+                return index;
+            }
+
+            weightSum -= weights[index++];
+        }
+
+        return index;
+    }
+
 
     void UnlockEnemy()
     {
@@ -94,7 +123,7 @@ public class EnemySpawner : MonoBehaviour
         currentWave++;
 
         // Every five waves a new enemy gets added to the list of possible spawns
-        if (currentWave % 5 == 0)
+        if (currentWave % 1 == 0)
         {
             UnlockEnemy();
         }
