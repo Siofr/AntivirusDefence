@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c371639531aa6c24aa6b73ab8a275782, type: 3}
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
-  enemyName: Test Enemy
+  enemyName: Basic Enemy
+  enemyDescription: A basic enemy that damages the CPU when it reaches it
   effectToPlay: 0
   enemyCost: 2
   spawnWeight: 0.5

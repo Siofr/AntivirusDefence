@@ -9,6 +9,7 @@ TagManager:
   - Adware
   - Spawner
   - Tile
+  - Turret
   layers:
   - Default
   - TransparentFX

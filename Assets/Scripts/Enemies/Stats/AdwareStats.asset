@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AdwareStats
   m_EditorClassIdentifier: 
   enemyName: Adware
+  enemyDescription: Spams the player with ads when it reaches the CPU
   effectToPlay: 1
   enemyCost: 2
   spawnWeight: 0.3

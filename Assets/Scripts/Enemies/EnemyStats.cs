@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     public string enemyName;
+    public string enemyDescription;
     public bool effectToPlay;
     public int enemyCost;
     public float spawnWeight;
