@@ -28,12 +28,22 @@ public class Buttonscript : MonoBehaviour
 
                 if (Physics.Raycast(raycast, out hit))
                 {
-                    if (hit.transform.position == cube.transform.position)
+                    if (hit.transform.gameObject.tag == "Tile" && hit.transform.position == cube.transform.position)
                     {
                         menu.SetActive(true);
                         test1Button.onClick.AddListener(test1Instantiate);
                         test2Button.onClick.AddListener(test2Instantiate);
                         test3Button.onClick.AddListener(test3Instantiate);
+                    }
+
+                    else if(hit.transform.gameObject.tag == "Enemy")
+                    {
+                        //call ui script function
+                    }
+
+                    else if (hit.transform.gameObject.tag == "Tower")
+                    {
+                        //call ui script function
                     }
                 }
             }
