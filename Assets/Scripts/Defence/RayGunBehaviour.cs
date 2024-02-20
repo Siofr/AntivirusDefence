@@ -15,8 +15,10 @@ public class RayGunBehaviour : MonoBehaviour
 
     private float nextShot;
     private bool isCharged;
+
     // Laser Sight
     private LineRenderer laserSight;
+    [SerializeField] private Transform laserOrigin;
 
     void Awake()
     {
@@ -24,7 +26,7 @@ public class RayGunBehaviour : MonoBehaviour
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
         
         laserSight = GetComponent<LineRenderer>();
-        laserSight.SetPosition(0, transform.position);
+
         enemyList = new List<GameObject>();
     }
 
@@ -52,8 +54,13 @@ public class RayGunBehaviour : MonoBehaviour
             // If the turret has a target shoot at it, or else get a new target from the first position on the list
             if (target != null)
             {
+                Vector3 targetPosition = target.transform.position;
                 laserSight.enabled = true;
-                laserSight.SetPosition(1, target.transform.position);
+                laserSight.SetPosition(0, laserOrigin.position);
+                laserSight.SetPosition(1, targetPosition);
+                Vector3 targetDirection = targetPosition - transform.position;
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, 60f, 0f);
+                transform.rotation = Quaternion.LookRotation(newDirection);
                 Fire(targetInterface);
             }
             // This prevents index error
