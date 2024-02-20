@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CPUBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
+    Scene currentScene;
+
+    void Awake()
+    {
+        currentScene = SceneManager.GetActiveScene();
+    }
 
     public void DealDamage(float damage)
     {
@@ -12,7 +19,7 @@ public class CPUBehaviour : MonoBehaviour, IDamageable
 
         if (health <= 0)
         {
-            // Game Over
+            SceneManager.LoadScene(currentScene.name);
         }
     }
 }

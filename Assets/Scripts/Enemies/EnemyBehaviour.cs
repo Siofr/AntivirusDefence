@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
-    [SerializeField] private EnemyStats enemyStats;
+    public EnemyStats enemyStats;
+    public UnityEvent playEffect;
     private NavMeshAgent agent;
     private GameObject playerBase;
     private float health;
@@ -17,16 +19,22 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();
         agent.speed = enemyStats.moveSpeed;
 
-        playerBase = GameObject.FindWithTag("CPU");
+        playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
         agent.SetDestination(playerBase.transform.position);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "CPU")
+        if (other.gameObject.tag == "CPU" && !enemyStats.effectToPlay)
         {
             other.gameObject.GetComponent<IDamageable>().DealDamage(enemyStats.damage);
             KillObject();
+        }
+        // if the enemy has an effect to play on death (adware) kill it and play the effect
+        else if (other.gameObject.tag == "CPU" && enemyStats.effectToPlay)
+        {
+            other.gameObject.GetComponent<IDamageable>().DealDamage(enemyStats.damage);
+            playEffect.Invoke();
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretBehaviour : MonoBehaviour
+public class RayGunBehaviour : MonoBehaviour
 {
     // Import the scriptable object
     [SerializeField] private TurretStats stats;
@@ -14,29 +14,35 @@ public class TurretBehaviour : MonoBehaviour
     private IDamageable targetInterface;
 
     private float nextShot;
-
-    // Bullet Trail
-    private LineRenderer bulletTrail;
-    private Vector3 trailSpawnPosition;
-    [SerializeField] private Transform trailSpawnObject;
-    [SerializeField] private float trailLifetime;
+    private bool isCharged;
+    // Laser Sight
+    private LineRenderer laserSight;
 
     void Awake()
     {
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
-        trailSpawnPosition = trailSpawnObject.position;
-        bulletTrail = GetComponent<LineRenderer>();
-        bulletTrail.SetPosition(0, transform.position);
+        laserSight = GetComponent<LineRenderer>();
+        laserSight.SetPosition(0, transform.position);
         enemyList = new List<GameObject>();
     }
 
     void Update()
     {
-        // If the enemy List is greater than 0, meaning an enemy is present
         if (enemyList.Count > 0)
         {
+            StartCoroutine(ChargeRay());
+        }
+        else
+        {
+            laserSight.enabled = false;
+            isCharged = false;
+        }
+
+        // If the enemy List is greater than 0, meaning an enemy is present
+        if (isCharged)
+        {
             // If the first item of the list is null remove it (Cleans up killed enemies)
-            if (enemyList[0] == null)
+            if (enemyList[0] == null && isCharged)
             {
                 enemyList.RemoveAt(0);
             }
@@ -44,7 +50,9 @@ public class TurretBehaviour : MonoBehaviour
             // If the turret has a target shoot at it, or else get a new target from the first position on the list
             if (target != null)
             {
-                Fire(targetInterface, target.gameObject);
+                laserSight.enabled = true;
+                laserSight.SetPosition(1, target.transform.position);
+                Fire(targetInterface);
             }
             // This prevents index error
             else if (target == null && enemyList.Count > 0)
@@ -53,10 +61,7 @@ public class TurretBehaviour : MonoBehaviour
                 targetInterface = target.gameObject.GetComponent<IDamageable>();
             }
         }
-        else
-        {
-            bulletTrail.enabled = false;
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -78,32 +83,22 @@ public class TurretBehaviour : MonoBehaviour
         }
     }
 
-    void Fire(IDamageable target, GameObject targetObject)
+    void Fire(IDamageable target)
     {
         // Rate of fire stuff
         if (Time.time > nextShot)
         {
             nextShot = Time.time + stats.defenceFireRate;
 
-            StartCoroutine(BulletTrail(targetObject.transform.position));
-
             // Deal damage to the target
             target.DealDamage(stats.defenceDamage);
         }
     }
 
-    private IEnumerator BulletTrail(Vector3 targetPos)
+    private IEnumerator ChargeRay()
     {
-        Vector3[] trailPositions = new Vector3[2];
+        yield return new WaitForSeconds(stats.chargeTime);
 
-        trailPositions[0] = trailSpawnPosition;
-        trailPositions[1] = targetPos;
-
-        bulletTrail.SetPositions(trailPositions);
-        bulletTrail.enabled = true;
-
-        yield return new WaitForSeconds(trailLifetime);
-
-        bulletTrail.enabled = false;
+        isCharged = true;
     }
 }

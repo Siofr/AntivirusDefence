@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
   enemyName: Test Enemy
+  effectToPlay: 0
   enemyCost: 2
+  spawnWeight: 0.5
   moveSpeed: 4
   health: 25
   damage: 5
