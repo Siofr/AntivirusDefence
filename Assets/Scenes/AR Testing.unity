@@ -922,13 +922,14 @@ GameObject:
   - component: {fileID: 344737859}
   - component: {fileID: 344737858}
   - component: {fileID: 344737857}
+  - component: {fileID: 344737865}
   - component: {fileID: 344737864}
   - component: {fileID: 344737856}
   - component: {fileID: 344737862}
   - component: {fileID: 344737863}
   m_Layer: 0
   m_Name: Ray Gun
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,7 +1160,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c848bb9e3f57c4b8c372fddc5a83a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 76c0046efdb955f44bfe61acb78217b8, type: 2}
+--- !u!114 &344737865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344737855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb125a8b382a00c45bdce32a187254c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenceStats: {fileID: 11400000, guid: 76c0046efdb955f44bfe61acb78217b8, type: 2}
 --- !u!1 &377470506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,14 +2545,15 @@ GameObject:
   m_Component:
   - component: {fileID: 759279128}
   - component: {fileID: 759279127}
+  - component: {fileID: 759279131}
+  - component: {fileID: 759279123}
   - component: {fileID: 759279126}
   - component: {fileID: 759279125}
-  - component: {fileID: 759279123}
   - component: {fileID: 759279129}
   - component: {fileID: 759279130}
   m_Layer: 0
   m_Name: Gatling Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2556,7 +2570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cddc37c2b387b4594deaa4bc258356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 422efa38a94938349bb199ff955301aa, type: 2}
   trailSpawnObject: {fileID: 405974644}
   trailLifetime: 0.05
 --- !u!65 &759279125
@@ -2773,6 +2786,19 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &759279131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759279122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb125a8b382a00c45bdce32a187254c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenceStats: {fileID: 11400000, guid: 422efa38a94938349bb199ff955301aa, type: 2}
 --- !u!1 &765906678
 GameObject:
   m_ObjectHideFlags: 0

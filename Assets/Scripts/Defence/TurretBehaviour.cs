@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretBehaviour : MonoBehaviour
 {
     // Import the scriptable object
-    [SerializeField] private TurretStats stats;
+    private TurretStats stats;
 
     // List of enemies
     private List<GameObject> enemyList;
@@ -23,7 +23,9 @@ public class TurretBehaviour : MonoBehaviour
 
     void Awake()
     {
+        stats = GetComponent<DefenceStats>().defenceStats;
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
+        
         trailSpawnPosition = trailSpawnObject.position;
         bulletTrail = GetComponent<LineRenderer>();
         bulletTrail.SetPosition(0, transform.position);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RayGunBehaviour : MonoBehaviour
 {
     // Import the scriptable object
-    [SerializeField] private TurretStats stats;
+    private TurretStats stats;
 
     // List of enemies
     private List<GameObject> enemyList;
@@ -20,7 +20,9 @@ public class RayGunBehaviour : MonoBehaviour
 
     void Awake()
     {
+        stats = GetComponent<DefenceStats>().defenceStats;
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
+        
         laserSight = GetComponent<LineRenderer>();
         laserSight.SetPosition(0, transform.position);
         enemyList = new List<GameObject>();
