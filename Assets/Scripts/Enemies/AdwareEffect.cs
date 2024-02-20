@@ -11,13 +11,15 @@ public class AdwareEffect : MonoBehaviour
 
     void Awake ()
     {
-        adwarePopups = GameObject.FindWithTag("Adware").transform;
+        // Find the adware UI Element
+        adwarePopups = GameObject.FindGameObjectsWithTag("Adware")[0].transform;
     }
 
     public void PopupAttack()
     {
         SFXManager.instance.PlaySFX(errorSound, transform, 0.75f);
 
+        // For each popup if the popup is inactive, add it to the inactive popup list
         foreach (Transform popup in adwarePopups)
         {
             if (!popup.gameObject.activeInHierarchy)
@@ -26,6 +28,7 @@ public class AdwareEffect : MonoBehaviour
             }
         }
 
+        // For each popup in the inactive popup list, activate a random one, deduct from the adware's strength, and if that strength is 0 break the loop
         for (int i = 0; i < inactivePopups.Count; i++)
         {
 
@@ -41,6 +44,7 @@ public class AdwareEffect : MonoBehaviour
             strength--;
         }
 
+        // Destroy the adware enemy
         Destroy(gameObject);
     }
 }

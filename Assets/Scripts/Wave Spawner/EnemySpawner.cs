@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
             spawnLocations.Add(spawner.position);
         }
 
-        // Populating Cost List
+        // Populating Cost and Weights List
         for (int i = 0; i < unlockedEnemyList.Count; i++)
         {
             enemyCosts.Add(unlockedEnemyList[i].GetComponent<EnemyBehaviour>().enemyStats.enemyCost);
@@ -64,24 +64,31 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        // If the spawner has "currency" to spend on enemies
         if (currentEnemyBudget > 0)
         {
+            // If the time is greater than the next spawn then spawn an enemy
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnInterval;
+
+                // Get a random weighted index, and instantiate the enemy at that index in the unlocked enemy list
                 int randomIndex = GetRandomWeightedIndex(enemyWeights.GetRange(0, unlockedEnemyList.Count));
-                Debug.Log(randomIndex);
                 Instantiate(unlockedEnemyList[randomIndex], spawnLocations[Random.Range(0, spawnLocations.Count)], Quaternion.identity);
+
+                // Deduct from the spawner's currency
                 currentEnemyBudget -= enemyCosts[randomIndex];
             }
         }
 
+        // If it doesn't we end the wave
         else
         {
             waveOver.Invoke();
         }
     }
 
+    // This returns a random weighted int
     public int GetRandomWeightedIndex(List<float> weights)
     {
         float weightSum = 0f;
@@ -119,7 +126,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartNewWave()
     {
-        currentEnemyBudget = startEnemyBudget;
+        // Increase the spawner's budget to spend on enemies based on the current wave and increase the wave
+        currentEnemyBudget = startEnemyBudget + (2 * currentWave);
         currentWave++;
 
         // Every five waves a new enemy gets added to the list of possible spawns
