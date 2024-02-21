@@ -1092,6 +1092,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6135284881608822272}
+
+  - component: {fileID: 7020002332306825057}
+  - component: {fileID: 689593171720653866}
+  - component: {fileID: 498687205395010100}
+  - component: {fileID: 425506928538331206}
+  - component: {fileID: 6324322505009672881}
+
   - component: {fileID: 498687205395010100}
   - component: {fileID: 425506928538331206}
   - component: {fileID: 6324322505009672881}
@@ -1326,6 +1333,7 @@ GameObject:
   - component: {fileID: 4162732926766317101}
   - component: {fileID: 874081371499155321}
   - component: {fileID: 5357263494594074291}
+
   m_Layer: 0
   m_Name: arm
   m_TagString: Untagged
@@ -1530,6 +1538,20 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695831805623336777}
   m_Enabled: 1
+
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de49d17b1f76f83448f0fab4dd2aea16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 4cb7603b54223e847b54c82fac57ba9e, type: 2}
+  playEffect:
+    m_PersistentCalls:
+      m_Calls: []
+  enemyPath: []
+  targetPosition: {x: 0, y: 0, z: 0}
+--- !u!54 &6324322505009672881
+Rigidbody:
+
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1566,10 +1588,34 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8889278813987478656
 GameObject:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
+  m_GameObject: {fileID: 6334665677170609285}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
+
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8175228602324524021}
@@ -1647,3 +1693,4 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+

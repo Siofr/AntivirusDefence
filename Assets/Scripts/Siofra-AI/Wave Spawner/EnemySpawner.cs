@@ -10,7 +10,14 @@ public class EnemySpawner : MonoBehaviour
     private float nextSpawn;
 
     private Transform enemySpawners;
-    private List<Vector3> spawnLocations = new List<Vector3>();
+    [SerializeField] private List<Transform> spawnTransforms = new List<Transform>();
+    private List<Vector3> spawnPositions = new List<Vector3>();
+
+    [SerializeField] private Transform leftPathTransform;
+    [SerializeField] private Transform rightPathTransform;
+
+    private List<Vector3> leftPath = new List<Vector3>();
+    private List<Vector3> rightPath = new List<Vector3>();
 
     public UnityEvent waveOver;
 
@@ -43,9 +50,19 @@ public class EnemySpawner : MonoBehaviour
         enemySpawners = gameObject.transform;
 
         // Adding the positions to the spawn locations list
-        foreach (Transform spawner in enemySpawners)
+        foreach (Transform spawner in spawnTransforms)
         {
-            spawnLocations.Add(spawner.position);
+            spawnPositions.Add(spawner.position);
+        }
+
+        foreach (Transform point in leftPathTransform)
+        {
+            leftPath.Add(point.position);
+        }
+
+        foreach (Transform point in rightPathTransform)
+        {
+            rightPath.Add(point.position);
         }
 
         // Populating Cost and Weights List
@@ -74,7 +91,21 @@ public class EnemySpawner : MonoBehaviour
 
                 // Get a random weighted index, and instantiate the enemy at that index in the unlocked enemy list
                 int randomIndex = GetRandomWeightedIndex(enemyWeights.GetRange(0, unlockedEnemyList.Count));
-                Instantiate(unlockedEnemyList[randomIndex], spawnLocations[Random.Range(0, spawnLocations.Count)], Quaternion.identity);
+                int randomSpawn = Random.Range(0, spawnPositions.Count);
+                GameObject enemy = Instantiate(unlockedEnemyList[randomIndex], spawnPositions[randomSpawn], Quaternion.identity);
+
+                if (randomSpawn == 1)
+                {
+                    EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                    enemyScript.enemyPath = leftPath;
+                    enemyScript.targetPosition = leftPath[0];
+                }
+                else
+                {
+                    EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                    enemyScript.enemyPath = rightPath;
+                    enemyScript.targetPosition = rightPath[0];
+                }
 
                 // Deduct from the spawner's currency
                 currentEnemyBudget -= enemyCosts[randomIndex];

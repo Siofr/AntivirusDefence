@@ -8,19 +8,39 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
     public EnemyStats enemyStats;
     public UnityEvent playEffect;
-    private NavMeshAgent agent;
-    private GameObject playerBase;
+    public List<Vector3> enemyPath = new List<Vector3>();
     private float health;
+
+    public Vector3 targetPosition;
+    private int currentWaypoint = 0;
 
     void Awake()
     {
         health = enemyStats.health;
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = enemyStats.moveSpeed;
+        // agent = GetComponent<NavMeshAgent>();
+        // agent.speed = enemyStats.moveSpeed;
 
-        playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
-        agent.SetDestination(playerBase.transform.position);
+        // playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
+        // agent.SetDestination(playerBase.transform.position);
+    }
+
+    void Update()
+    {
+        Walk();
+    }
+
+    private void Walk()
+    {
+        transform.forward = Vector3.RotateTowards(transform.forward, targetPosition - transform.position, 60f, 0.0f);
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyStats.moveSpeed * Time.deltaTime);
+
+        if (transform.position == targetPosition)
+        {
+            currentWaypoint++;
+            targetPosition = enemyPath[currentWaypoint];
+        }
     }
 
     void OnTriggerEnter(Collider other)
