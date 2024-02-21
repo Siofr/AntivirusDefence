@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2554251268557841654}
   - component: {fileID: 1103759285141063411}
   - component: {fileID: 8878134129403207927}
-  - component: {fileID: 5671375757288040904}
   m_Layer: 0
   m_Name: Adware
   m_TagString: Enemy
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0, z: 16.728}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,6 +136,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   enemyPath: []
+  health: 0
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8878134129403207927
 MonoBehaviour:
@@ -152,30 +152,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 2
   errorSound: {fileID: 8300000, guid: dd77d5ecc84325a42b6ac3c2919ee1e6, type: 3}
---- !u!54 &5671375757288040904
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7114591838161270010}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 1
