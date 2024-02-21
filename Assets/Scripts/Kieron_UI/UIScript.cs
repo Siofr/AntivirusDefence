@@ -87,6 +87,7 @@ public class UIScript : MonoBehaviour
                     targetEffect.text = targetTower.towerEffect;
                     targetHealthBar.maxValue = targetTower.towerTotalHealth;
                     targetHealthBar.value = targetTower.towerCurrentHealth;
+                    targetSpeed.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -108,6 +109,7 @@ public class UIScript : MonoBehaviour
                     targetEffect.text = targetMalware.malwareEffect;
                     targetHealthBar.maxValue = targetMalware.malwareTotalHealth;
                     targetHealthBar.value = targetMalware.malwareCurrentHealth;
+                    targetRange.gameObject.SetActive(false);
                 }
                 else
                 {
