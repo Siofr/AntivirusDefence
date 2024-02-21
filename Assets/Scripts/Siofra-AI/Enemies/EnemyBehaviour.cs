@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public EnemyStats enemyStats;
     public UnityEvent playEffect;
     public List<Vector3> enemyPath = new List<Vector3>();
-    private float health;
+    public float health;
 
     public Vector3 targetPosition;
     private int currentWaypoint = 0;
