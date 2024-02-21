@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: GatlingTurret
   m_EditorClassIdentifier: 
   defenceName: Gatling Turret
+  defenceDescription: 
+  defenceHealth: 25
+  defenceCost: 25
   defenceRange: 3
-  defenceDamage: 2
+  defenceDamage: 1
   defenceFireRate: 0.2
   chargeTime: 0

@@ -11,8 +11,12 @@ public class UIScript : MonoBehaviour
     // Declare Script that holds wave number
 
     public GameObject target;
-    private TowerScript targetTower;
-    private MalwareScript targetMalware;
+
+    //private TowerScript targetTower;
+    //private MalwareScript targetMalware;
+    private TurretStats targetTower;
+    private EnemyStats targetMalware;
+
     private TileScript targetTile;
 
     public GameObject pauseScreen, infoBox;
@@ -73,12 +77,12 @@ public class UIScript : MonoBehaviour
                 }
                 break;
             }
-            case "Tower":
+            case "Turret":
             {
-                if(target.GetComponent<TowerScript>())
+                if(target.GetComponent</*TowerScript*/DefenceStats>())
                 {
                     infoBox.SetActive(true);
-                    targetTower = target.GetComponent<TowerScript>();
+                    /*targetTower = target.GetComponent<TowerScript>();
                     targetName.text = targetTower.towerName;
                     targetHealth.text = targetTower.towerTotalHealth.ToString() + " / " + targetTower.towerCurrentHealth.ToString();
                     targetDamage.text = "Deals " + targetTower.towerDamage.ToString() + " Damage";
@@ -87,7 +91,19 @@ public class UIScript : MonoBehaviour
                     targetEffect.text = targetTower.towerEffect;
                     targetHealthBar.maxValue = targetTower.towerTotalHealth;
                     targetHealthBar.value = targetTower.towerCurrentHealth;
+                    targetSpeed.gameObject.SetActive(false);*/
+
+                    targetTower = target.GetComponent<DefenceStats>().defenceStats;
+                    targetName.text = targetTower.defenceName;
+                    targetHealth.text = target.GetComponent<DefenceStats>().health.ToString() + " / " + targetTower.defenceHealth.ToString();
+                    targetDamage.text = "Deals " + targetTower.defenceDamage.ToString() + " Damage";
+                    targetROF.text = "Every " + targetTower.defenceFireRate.ToString() + " Seconds";
+                    targetRange.text = "Radius: " + targetTower.defenceRange.ToString() + " cm";
+                    targetEffect.text = targetTower.defenceDescription;
+                    targetHealthBar.maxValue = targetTower.defenceHealth;
+                    targetHealthBar.value = target.GetComponent<DefenceStats>().health;
                     targetSpeed.gameObject.SetActive(false);
+
                 }
                 else
                 {
@@ -95,12 +111,12 @@ public class UIScript : MonoBehaviour
                 }
                 break;
             }
-            case "Malware":
+            case "Enemy":
             {
-                if(target.GetComponent<MalwareScript>())
+                if(target.GetComponent</*MalwareScript*/EnemyBehaviour>())
                 {
                     infoBox.SetActive(true);
-                    targetMalware = target.GetComponent<MalwareScript>();
+                    /*targetMalware = target.GetComponent<MalwareScript>();
                     targetName.text = targetMalware.malwareName;
                     targetHealth.text = targetMalware.malwareCurrentHealth.ToString() + " / " + targetMalware.malwareTotalHealth.ToString();
                     targetDamage.text = "Deals " + targetMalware.malwareDamage.ToString() + " Damage";
@@ -109,6 +125,17 @@ public class UIScript : MonoBehaviour
                     targetEffect.text = targetMalware.malwareEffect;
                     targetHealthBar.maxValue = targetMalware.malwareTotalHealth;
                     targetHealthBar.value = targetMalware.malwareCurrentHealth;
+                    targetRange.gameObject.SetActive(false);*/
+
+                    targetMalware = target.GetComponent<EnemyBehaviour>().enemyStats;
+                    targetName.text = targetMalware.enemyName;
+                    targetHealth.text = target.GetComponent<EnemyBehaviour>().health.ToString() + " / " + targetMalware.health.ToString();
+                    targetDamage.text = "Deals " + targetMalware.damage.ToString() + " Damage";
+                    targetROF.text = "Every " + targetMalware.enemyFireRate.ToString() + " Seconds";
+                    targetSpeed.text = "Moves " + targetMalware.moveSpeed.ToString() + " cm/s";
+                    targetEffect.text = targetMalware.enemyDescription;
+                    targetHealthBar.maxValue = targetMalware.health;
+                    targetHealthBar.value = target.GetComponent<EnemyBehaviour>().health;
                     targetRange.gameObject.SetActive(false);
                 }
                 else
