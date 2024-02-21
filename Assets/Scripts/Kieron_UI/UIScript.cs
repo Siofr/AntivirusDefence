@@ -64,6 +64,11 @@ public class UIScript : MonoBehaviour
 
     }
 
+    public void ArenaPlaced()
+    {
+        cpu = GameObject.FindGameObjectsWithTag("CPU")[0].GetComponent<CPUBehaviour>();
+    }
+
     public void UpdateTargetInfo()
     {
         switch (target.tag)
