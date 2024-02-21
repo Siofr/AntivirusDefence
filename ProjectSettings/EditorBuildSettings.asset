@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kieron_Start_Scene.unity
     guid: 2215747be073afb4e8e1e094c1e075a4
+  - enabled: 1
+    path: Assets/Scenes/Siofra-Scenes/Camera AR Test.unity
+    guid: c1522004a4e79d846819c1aa34caf720
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
