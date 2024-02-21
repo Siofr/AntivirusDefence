@@ -2992,6 +2992,11 @@ PrefabInstance:
       propertyPath: economy
       value: 
       objectReference: {fileID: 1667625044}
+    - target: {fileID: 8240251874863167427, guid: d68c808b534ad994eb13f3a0f7e1e42b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8275462478340944009, guid: d68c808b534ad994eb13f3a0f7e1e42b,
         type: 3}
       propertyPath: UI
