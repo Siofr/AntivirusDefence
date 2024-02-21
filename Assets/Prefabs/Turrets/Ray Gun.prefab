@@ -65,7 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8292533768628362689}
-  - {fileID: 7915333144836981789}
+  - {fileID: 2138919244521921757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3712595733173938163
@@ -222,13 +222,67 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &8831301904895165021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138919244521921757}
+  - component: {fileID: 5224178901958785974}
+  m_Layer: 0
+  m_Name: RayGunParent
+  m_TagString: Turret
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2138919244521921757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831301904895165021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7915333144836981789}
+  m_Father: {fileID: 1257845488562594500}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5224178901958785974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831301904895165021}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0946925, y: 0.749985, z: 0.56998587}
+  m_Center: {x: 0.11765635, y: -0.12797946, z: -0.0010781288}
 --- !u!1001 &7661274923509162998
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1257845488562594500}
+    m_TransformParent: {fileID: 2138919244521921757}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
         type: 3}
@@ -268,7 +322,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
         type: 3}
@@ -278,7 +332,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
         type: 3}
@@ -308,39 +362,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8059647380378065171}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed43bc8a458ca447bd8d6cedd504d44, type: 3}
---- !u!1 &7391314232749465255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
-    type: 3}
-  m_PrefabInstance: {fileID: 7661274923509162998}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &8059647380378065171
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391314232749465255}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3656379, y: 0.24803162, z: 0.23067838}
-  m_Center: {x: -0.111405775, y: 0.12299721, z: 0.0030097864}
 --- !u!4 &7915333144836981789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
