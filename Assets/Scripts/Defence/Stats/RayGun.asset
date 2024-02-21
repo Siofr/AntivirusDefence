@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: RayGun
   m_EditorClassIdentifier: 
   defenceName: Ray Gun
+  defenceDescription: 
+  defenceHealth: 25
+  defenceCost: 50
   defenceRange: 6
-  defenceDamage: 0.5
-  defenceFireRate: 0.2
+  defenceDamage: 1
+  defenceFireRate: 0.1
   chargeTime: 2

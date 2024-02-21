@@ -10,7 +10,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public UnityEvent playEffect;
     private NavMeshAgent agent;
     private GameObject playerBase;
-    private float health;
+    public float health;
 
     void Awake()
     {

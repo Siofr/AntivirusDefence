@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defenceStats: {fileID: 11400000, guid: 422efa38a94938349bb199ff955301aa, type: 2}
+  health: 0
 --- !u!114 &4657126762191459608
 MonoBehaviour:
   m_ObjectHideFlags: 0

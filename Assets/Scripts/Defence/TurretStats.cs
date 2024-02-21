@@ -6,7 +6,7 @@ public class TurretStats : ScriptableObject
     public string defenceName;
     public string defenceDescription;
     public float defenceHealth;
-    public float defenceCost;
+    public int defenceCost;
     public float defenceRange;
     public float defenceDamage;
     public float defenceFireRate;
