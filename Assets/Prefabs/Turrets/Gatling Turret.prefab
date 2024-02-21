@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 7265344247831294548}
   - component: {fileID: 4375618824873962546}
   - component: {fileID: 4657126762191459608}
-  - component: {fileID: 4411219391547098561}
   - component: {fileID: 4062623582549608636}
   - component: {fileID: 2787537083212161004}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gatling Turret
-  m_TagString: Turret
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,9 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1567726513222158258}
-  - {fileID: 6948593950633672896}
-  - {fileID: 5732722923521528748}
+  - {fileID: 6737913058092921266}
   - {fileID: 8428962348943669333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68,27 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailSpawnObject: {fileID: 8428962348943669333}
   trailLifetime: 0.05
---- !u!65 &4411219391547098561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60084584146262382}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1, y: 1, z: 0.5}
-  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!120 &4062623582549608636
 LineRenderer:
   serializedVersion: 2
@@ -254,7 +230,7 @@ Transform:
   - {fileID: 5267477591029312348}
   - {fileID: 9103883568811422976}
   - {fileID: 6392874208773460400}
-  m_Father: {fileID: 7265344247831294548}
+  m_Father: {fileID: 6737913058092921266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &821278546243858262
 GameObject:
@@ -1038,8 +1014,64 @@ Transform:
   - {fileID: 5707769833177592927}
   - {fileID: 2514428891982344086}
   - {fileID: 6207984349659677438}
+  m_Father: {fileID: 6737913058092921266}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3564683078780753141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6737913058092921266}
+  - component: {fileID: 3936865075626543057}
+  m_Layer: 0
+  m_Name: Gattling Gun
+  m_TagString: Turret
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6737913058092921266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564683078780753141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1567726513222158258}
+  - {fileID: 6948593950633672896}
+  - {fileID: 5732722923521528748}
   m_Father: {fileID: 7265344247831294548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3936865075626543057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564683078780753141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1, y: 1, z: 0.5}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!1 &3725544198946096678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1692,7 @@ Transform:
   - {fileID: 7662528280733886608}
   - {fileID: 8441715148031790614}
   - {fileID: 5139023694115715102}
-  m_Father: {fileID: 7265344247831294548}
+  m_Father: {fileID: 6737913058092921266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6861140090053139653
 GameObject:
