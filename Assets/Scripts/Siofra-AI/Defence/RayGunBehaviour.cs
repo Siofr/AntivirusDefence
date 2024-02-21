@@ -8,7 +8,7 @@ public class RayGunBehaviour : MonoBehaviour
     private TurretStats stats;
 
     // List of enemies
-    private List<GameObject> enemyList;
+    public List<GameObject> enemyList;
 
     private GameObject target;
     private IDamageable targetInterface;
