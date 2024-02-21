@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class CPUBehaviour : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float health;
+    public float maxHealth;
+    public float health;
     Scene currentScene;
 
     void Awake()
     {
+        health = maxHealth;
         currentScene = SceneManager.GetActiveScene();
     }
 

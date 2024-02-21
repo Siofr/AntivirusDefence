@@ -42,12 +42,11 @@ GameObject:
   - component: {fileID: 1257845488562594500}
   - component: {fileID: 3712595733173938163}
   - component: {fileID: 1813678791605859683}
-  - component: {fileID: 8294107094769532634}
   - component: {fileID: 3061174481435240825}
   - component: {fileID: 9150933036063238711}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ray Gun
-  m_TagString: Turret
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,27 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenceStats: {fileID: 11400000, guid: 76c0046efdb955f44bfe61acb78217b8, type: 2}
   health: 0
---- !u!65 &8294107094769532634
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2636259763209606576}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0796671, y: 0.97028446, z: 1}
-  m_Center: {x: 0.08300066, y: 0, z: 0}
 --- !u!136 &3061174481435240825
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -322,11 +300,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ray Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
+        type: 3}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8059647380378065171}
   m_SourcePrefab: {fileID: 100100000, guid: 4ed43bc8a458ca447bd8d6cedd504d44, type: 3}
+--- !u!1 &7391314232749465255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
+    type: 3}
+  m_PrefabInstance: {fileID: 7661274923509162998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8059647380378065171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391314232749465255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3656379, y: 0.24803162, z: 0.23067838}
+  m_Center: {x: -0.111405775, y: 0.12299721, z: 0.0030097864}
 --- !u!4 &7915333144836981789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ed43bc8a458ca447bd8d6cedd504d44,
