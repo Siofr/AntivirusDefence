@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIScript : MonoBehaviour
 {
-    public CPUScript cpu;
+    public CPUBehaviour cpu;
     public EconomySystem economy;
     // Declare Script that holds wave number
 
@@ -49,9 +49,9 @@ public class UIScript : MonoBehaviour
 
     public void UpdateCPUHealth()
     {
-        CPUHealth.text = cpu.CPUTotalHealth.ToString() + " / " + cpu.CPUCurrentHealth.ToString();
-        CPUHealthBar.maxValue = cpu.CPUTotalHealth;
-        CPUHealthBar.value = cpu.CPUCurrentHealth;
+        CPUHealth.text = cpu.maxHealth.ToString() + " / " + cpu.health.ToString();
+        CPUHealthBar.maxValue = cpu.maxHealth;
+        CPUHealthBar.value = cpu.health;
     }
 
     public void UpdateCryptocoins()
