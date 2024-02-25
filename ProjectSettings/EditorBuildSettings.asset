@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlaytestScene.unity
     guid: 8352bb54b703277499e1ce69094a7001
+  - enabled: 0
+    path: Assets/Scenes/Siofra-Scenes/UnityTemplateScene.unity
+    guid: 4a5b6f6690281794d8f3f958edcc3ee6
+  - enabled: 0
+    path: Assets/Scenes/UnityTemplateScene.unity
+    guid: 4755b35b590504809a7525fd2109c2e2
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
