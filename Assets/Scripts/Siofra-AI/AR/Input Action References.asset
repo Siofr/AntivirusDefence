@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc228a7c3a1e394c91776b6bc04bbf2, type: 3}
+  m_Name: Input Action References
+  m_EditorClassIdentifier: 
+  m_ScreenTap:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Screen Tap
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e012e7bf-a3fe-4695-a9aa-f21d43c762f8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_ScreenTapPosition:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Screen Tap Position
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f7c561d6-54cd-4e66-9a02-c56a48d42b84
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_LeftTriggerPressed:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Trigger Pressed
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 894b1dcd-df31-4452-8a0f-a1e5235c2e17
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_LeftHandPosition:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Hand Position
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6e860545-bc76-405b-a901-b10f7dddcb12
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_LeftHandRotation:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Hand Rotation
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 5152aaa7-96ae-47be-a9f3-d5772fcdb090
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightTriggerPressed:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Trigger Pressed
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1c2f84d5-d377-49e0-b9df-ea8d520c26e3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandPosition:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Position
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 300f6a1b-3486-41d1-971a-66296e3016b5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandRotation:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Rotation
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 67e99a66-a1d4-4f83-aaf1-235d98cc7ecc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
