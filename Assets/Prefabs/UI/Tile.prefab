@@ -2432,6 +2432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileUI: {fileID: 4659653667838088502}
   UI: {fileID: 0}
+  tower: {fileID: 0}
   towerTransform: {fileID: 115493597240047264}
   economy: {fileID: 0}
   turret: {fileID: 11400000, guid: 422efa38a94938349bb199ff955301aa, type: 2}

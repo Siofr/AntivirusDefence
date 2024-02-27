@@ -77,6 +77,10 @@ public class UIScript : MonoBehaviour
             {
                 if(target.GetComponent<TileScript>())
                 {
+                    if(targetTile != null)
+                    {
+                        targetTile.tileUI.SetActive(false);
+                    }
                     targetTile = target.GetComponent<TileScript>();
                     targetTile.tileUI.SetActive(true);
                 }
@@ -84,7 +88,8 @@ public class UIScript : MonoBehaviour
             }
             case "Turret":
             {
-                if(target.GetComponent</*TowerScript*/DefenceStats>())
+                
+                if(target.GetComponentInParent</*TowerScript*/DefenceStats>())
                 {
                     infoBox.SetActive(true);
                     /*targetTower = target.GetComponent<TowerScript>();
@@ -98,16 +103,17 @@ public class UIScript : MonoBehaviour
                     targetHealthBar.value = targetTower.towerCurrentHealth;
                     targetSpeed.gameObject.SetActive(false);*/
 
-                    targetTower = target.GetComponent<DefenceStats>().defenceStats;
+                    targetTower = target.GetComponentInParent<DefenceStats>().defenceStats;
                     targetName.text = targetTower.defenceName;
-                    targetHealth.text = target.GetComponent<DefenceStats>().health.ToString() + " / " + targetTower.defenceHealth.ToString();
+                    targetHealth.text = target.GetComponentInParent<DefenceStats>().health.ToString() + " / " + targetTower.defenceHealth.ToString();
                     targetDamage.text = "Deals " + targetTower.defenceDamage.ToString() + " Damage";
                     targetROF.text = "Every " + targetTower.defenceFireRate.ToString() + " Seconds";
                     targetRange.text = "Radius: " + targetTower.defenceRange.ToString() + " cm";
                     targetEffect.text = targetTower.defenceDescription;
                     targetHealthBar.maxValue = targetTower.defenceHealth;
-                    targetHealthBar.value = target.GetComponent<DefenceStats>().health;
+                    targetHealthBar.value = target.GetComponentInParent<DefenceStats>().health;
                     targetSpeed.gameObject.SetActive(false);
+                    targetRange.gameObject.SetActive(true);
 
                 }
                 else
@@ -142,6 +148,7 @@ public class UIScript : MonoBehaviour
                     targetHealthBar.maxValue = targetMalware.health;
                     targetHealthBar.value = target.GetComponent<EnemyBehaviour>().health;
                     targetRange.gameObject.SetActive(false);
+                    targetSpeed.gameObject.SetActive(true);
                 }
                 else
                 {

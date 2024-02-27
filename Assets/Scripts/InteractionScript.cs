@@ -24,7 +24,23 @@ public class InteractionScript : MonoBehaviour
                 if (Physics.Raycast(raycast, out hit))
                 {
                         target = hit.transform.gameObject;
-                        UI.target = target;
+                        if(target.GetComponent<TileScript>())
+                        {
+                            if (target.GetComponent<TileScript>().tower != null)
+                            {
+                                UI.target = target.GetComponent<TileScript>().tower;
+                            }
+                            else
+                            {
+                                UI.target = target;
+                            }
+                        }
+                        else
+                        {
+                            UI.target = target;
+                        }
+                        
+
                 }
             }
         }
