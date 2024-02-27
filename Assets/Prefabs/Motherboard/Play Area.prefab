@@ -481,7 +481,6 @@ GameObject:
   m_Component:
   - component: {fileID: 378075790665870435}
   - component: {fileID: 2036680920403746545}
-  - component: {fileID: 2063875388198537236}
   m_Layer: 0
   m_Name: Play Area
   m_TagString: Spawnable
@@ -525,18 +524,6 @@ MonoBehaviour:
   rightPath: {fileID: 6465070672000365742}
   leftPathRenderer: {fileID: 5297154386081668093}
   rightPathRenderer: {fileID: 3295434856103037782}
---- !u!114 &2063875388198537236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009157508956035698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62324ef1ff4b9ea4fb770c6d86f046cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4686499454597536462
 GameObject:
   m_ObjectHideFlags: 0
