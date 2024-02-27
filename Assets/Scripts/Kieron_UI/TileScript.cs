@@ -7,7 +7,7 @@ public class TileScript : MonoBehaviour
 {
     public GameObject tileUI;
     public UIScript UI;
-    private GameObject tower;
+    public GameObject tower;
     public Transform towerTransform;
     public EconomySystem economy;
     public TurretStats turret, raygun;
