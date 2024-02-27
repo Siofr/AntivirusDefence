@@ -46,7 +46,11 @@ public class TurretBehaviour : MonoBehaviour
             // If the turret has a target shoot at it, or else get a new target from the first position on the list
             if (target != null)
             {
+                Vector3 targetPosition = target.transform.position;
                 Fire(targetInterface, target.gameObject);
+                Vector3 targetDirection = targetPosition - transform.position;
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, 60f, 0f);
+                transform.rotation = Quaternion.LookRotation(newDirection);
             }
             // This prevents index error
             else if (target == null && enemyList.Count > 0)

@@ -99,9 +99,9 @@ public class CannonBehaviour : MonoBehaviour
 
             foreach (Collider explosionCollider in explosionColliders)
             {
-                if (explosionCollider.TryGetComponent(out IDamageable damageable))
+                if (explosionCollider.transform.gameObject.tag == "Enemy")
                 {
-                    damageable.DealDamage(stats.defenceDamage);
+                    explosionCollider.transform.GetComponent<IDamageable>().DealDamage(stats.defenceDamage);
                 }
             }
         }
