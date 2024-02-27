@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayGunBehaviour : MonoBehaviour
+public class CannonBehaviour : MonoBehaviour
 {
     // Import the scriptable object
     private TurretStats stats;
@@ -10,43 +10,35 @@ public class RayGunBehaviour : MonoBehaviour
     // List of enemies
     public List<GameObject> enemyList;
 
-    private GameObject target;
+    public GameObject target;
     private IDamageable targetInterface;
 
     private float nextShot;
-    private bool isCharged;
 
-    // Laser Sight
-    private LineRenderer laserSight;
-    [SerializeField] private Transform laserOrigin;
+    // Bullet Trail
+    private LineRenderer bulletTrail;
+    private Vector3 trailSpawnPosition;
+    [SerializeField] private Transform trailSpawnObject;
+    [SerializeField] private float trailLifetime;
 
     void Awake()
     {
         stats = GetComponent<DefenceStats>().defenceStats;
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
-        
-        laserSight = GetComponent<LineRenderer>();
 
+        trailSpawnPosition = trailSpawnObject.position;
+        bulletTrail = GetComponent<LineRenderer>();
+        bulletTrail.SetPosition(0, transform.position);
         enemyList = new List<GameObject>();
     }
 
     void Update()
     {
+        // If the enemy List is greater than 0, meaning an enemy is present
         if (enemyList.Count > 0)
         {
-            StartCoroutine(ChargeRay());
-        }
-        else
-        {
-            laserSight.enabled = false;
-            isCharged = false;
-        }
-
-        // If the enemy List is greater than 0, meaning an enemy is present
-        if (isCharged)
-        {
             // If the first item of the list is null remove it (Cleans up killed enemies)
-            if (enemyList[0] == null && isCharged)
+            if (enemyList[0] == null)
             {
                 enemyList.RemoveAt(0);
             }
@@ -54,14 +46,7 @@ public class RayGunBehaviour : MonoBehaviour
             // If the turret has a target shoot at it, or else get a new target from the first position on the list
             if (target != null)
             {
-                Vector3 targetPosition = target.transform.position;
-                laserSight.enabled = true;
-                laserSight.SetPosition(0, laserOrigin.position);
-                laserSight.SetPosition(1, targetPosition);
-                Vector3 targetDirection = targetPosition - transform.position;
-                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, 60f, 0f);
-                transform.rotation = Quaternion.LookRotation(newDirection);
-                Fire(targetInterface);
+                Fire(targetInterface, target.gameObject);
             }
             // This prevents index error
             else if (target == null && enemyList.Count > 0)
@@ -70,11 +55,15 @@ public class RayGunBehaviour : MonoBehaviour
                 targetInterface = target.gameObject.GetComponent<IDamageable>();
             }
         }
-        
+        else
+        {
+            bulletTrail.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Cannon trigger");
         // If an enemy enters the range of the turret at it to a list
         if (other.gameObject.tag == "Enemy")
         {
@@ -93,22 +82,43 @@ public class RayGunBehaviour : MonoBehaviour
         }
     }
 
-    void Fire(IDamageable target)
+    void Fire(IDamageable target, GameObject targetObject)
     {
         // Rate of fire stuff
         if (Time.time > nextShot)
         {
+            Debug.Log("Cannon Fired");
             nextShot = Time.time + stats.defenceFireRate;
 
+            StartCoroutine(BulletTrail(targetObject.transform.position));
+
             // Deal damage to the target
-            target.DealDamage(stats.defenceDamage);
+            Vector3 explosionPosition = targetObject.transform.position;
+
+            Collider[] explosionColliders = Physics.OverlapSphere(explosionPosition, stats.defenceSplashRadius);
+
+            foreach (Collider explosionCollider in explosionColliders)
+            {
+                if (explosionCollider.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.DealDamage(stats.defenceDamage);
+                }
+            }
         }
     }
 
-    private IEnumerator ChargeRay()
+    private IEnumerator BulletTrail(Vector3 targetPos)
     {
-        yield return new WaitForSeconds(stats.chargeTime);
+        Vector3[] trailPositions = new Vector3[2];
 
-        isCharged = true;
+        trailPositions[0] = trailSpawnPosition;
+        trailPositions[1] = targetPos;
+
+        bulletTrail.SetPositions(trailPositions);
+        bulletTrail.enabled = true;
+
+        yield return new WaitForSeconds(trailLifetime);
+
+        bulletTrail.enabled = false;
     }
 }

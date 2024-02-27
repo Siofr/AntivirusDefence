@@ -77,6 +77,7 @@ public class TurretBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyList.Remove(other.gameObject);
+            target = null;
         }
     }
 
