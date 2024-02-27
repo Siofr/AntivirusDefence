@@ -9,6 +9,7 @@ public class TurretStats : ScriptableObject
     public int defenceCost;
     public float defenceRange;
     public float defenceDamage;
+    public float defenceSplashRadius;
     public float defenceFireRate;
     public float chargeTime;
 }
