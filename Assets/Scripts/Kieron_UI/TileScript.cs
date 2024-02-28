@@ -37,8 +37,8 @@ public class TileScript : MonoBehaviour
             {
                 EconomySystem.cryptocoins -= chosenTower.GetComponent<DefenceStats>().defenceStats.defenceCost;
                 tower = Instantiate(chosenTower, towerTransform);
-                UI.target = tower;
                 tileUI.SetActive(false);
+                UI.target = tower;
             }
         }
     }
