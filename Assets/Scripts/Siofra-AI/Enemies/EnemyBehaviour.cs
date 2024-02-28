@@ -14,6 +14,8 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public Vector3 targetPosition;
     private int currentWaypoint = 0;
 
+    public EconomySystem economy;
+
     void Awake()
     {
         health = enemyStats.health;
@@ -60,6 +62,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     public void KillObject()
     {
+        EconomySystem.cryptocoins += enemyStats.coinDrop;
         Destroy(gameObject);
     }
 

@@ -21,3 +21,4 @@ MonoBehaviour:
   health: 25
   damage: 5
   enemyFireRate: 0
+  coinDrop: 5

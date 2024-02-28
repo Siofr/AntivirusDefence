@@ -7,7 +7,7 @@ using TMPro;
 public class UIScript : MonoBehaviour
 {
     public CPUBehaviour cpu;
-    public EconomySystem economy;
+    //public EconomySystem economy;
     // Declare Script that holds wave number
 
     public GameObject target;
@@ -56,7 +56,7 @@ public class UIScript : MonoBehaviour
 
     public void UpdateCryptocoins()
     {
-        cryptocoins.text = economy.cryptocoins.ToString();
+        cryptocoins.text = EconomySystem.cryptocoins.ToString();
     }
 
     public void UpdateWaveNumber()

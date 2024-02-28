@@ -12,4 +12,5 @@ public class EnemyStats : ScriptableObject
     public float health;
     public float damage;
     public float enemyFireRate;
+    public int coinDrop;
 }
