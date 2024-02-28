@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EconomySystem : MonoBehaviour
 {
-    public int cryptocoins;
+    public static EconomySystem instance;
+
+    public static int cryptocoins = 100;
     
     // Start is called before the first frame update
     void Start()

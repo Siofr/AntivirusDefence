@@ -9,7 +9,7 @@ public class TileScript : MonoBehaviour
     public UIScript UI;
     public GameObject tower;
     public Transform towerTransform;
-    public EconomySystem economy;
+    //public EconomySystem economy;
     public TurretStats turret, raygun;
     public TMP_Text turretCost, raygunCost;
     
@@ -30,12 +30,12 @@ public class TileScript : MonoBehaviour
     {
         if(tower == null)
         {
-            int coins = economy.cryptocoins;
+            int coins = EconomySystem.cryptocoins;
             int cost = chosenTower.GetComponent<DefenceStats>().defenceStats.defenceCost;
 
             if(coins >= cost)
             {
-                economy.cryptocoins -= chosenTower.GetComponent<DefenceStats>().defenceStats.defenceCost;
+                EconomySystem.cryptocoins -= chosenTower.GetComponent<DefenceStats>().defenceStats.defenceCost;
                 tower = Instantiate(chosenTower, towerTransform);
                 UI.target = tower;
                 tileUI.SetActive(false);
