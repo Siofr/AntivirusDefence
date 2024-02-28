@@ -752,6 +752,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3448700713766481501, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
+        type: 3}
+      propertyPath: m_text
+      value: Tap Tiles to Place Towers
+      objectReference: {fileID: 0}
     - target: {fileID: 4391991321786495677, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
       propertyPath: m_AnchorMax.x
