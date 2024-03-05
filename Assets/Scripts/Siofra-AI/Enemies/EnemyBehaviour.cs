@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public float health;
 
     public Vector3 targetPosition;
-    private int currentWaypoint = 0;
+    public int currentWaypoint = 0;
 
     public EconomySystem economy;
 
