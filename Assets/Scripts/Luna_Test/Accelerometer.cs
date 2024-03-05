@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Accelerometer : MonoBehaviour
 {
-    public EnemyStats adwareStats;
-    public EnemyStats enemyStats;
-    public bool pause = false;
+    public EnemyBehaviour adwareBehaviour;
+    public EnemyBehaviour enemyBehaviour;
+    public bool damage = false;
     //#region Instance
     private static Accelerometer instance;
     public static Accelerometer Instance
@@ -53,31 +53,16 @@ public class Accelerometer : MonoBehaviour
 
         if(deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
         {
-            StartCoroutine(EnemyStop());
+            EnemyStop();
         }
     }
 
-    IEnumerator EnemyStop()
+    void EnemyStop()
     {
-        if(pause == true)
+        if(damage == true)
         {
-            int counter = 3;
-            while (true)
-            {
-                if (counter != 0)
-                {
-                    adwareStats.moveSpeed = 0f;
-                    enemyStats.moveSpeed = 0f;
-                }
-                else
-                {
-                    adwareStats.moveSpeed = 0.75f;
-                    enemyStats.moveSpeed = 1f;
-                    break;
-                }
-                counter--;
-                yield return new WaitForSeconds(1.0f);
-            }
+            adwareBehaviour.health -= 20f;
+            enemyBehaviour.health -= 20f;
         }  
     }
 }
