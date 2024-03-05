@@ -27,7 +27,6 @@ public class AudioInput : MonoBehaviour
 
         if (loudness < threshold)
         {
-            pause = false;
             loudness = 0;
         }
 
@@ -40,22 +39,26 @@ public class AudioInput : MonoBehaviour
 
     IEnumerator EnemyStop()
     {
-        int counter = 3;
-        while (true)
+        if(pause == true)
         {
-            if (counter != 0)
+            int counter = 3;
+            while (true)
             {
-                adwareStats.moveSpeed = 0f;
-                enemyStats.moveSpeed = 0f;
+                if (counter != 0)
+                {
+                    adwareStats.moveSpeed = 0f;
+                    enemyStats.moveSpeed = 0f;
+                }
+                else
+                {
+                    adwareStats.moveSpeed = 0.75f;
+                    enemyStats.moveSpeed = 1f;
+                    pause = false;
+                    break;
+                }
+                counter--;
+                yield return new WaitForSeconds(1.0f);
             }
-            else
-            {
-                adwareStats.moveSpeed = 0.75f;
-                enemyStats.moveSpeed = 1f;
-                break;
-            }
-            counter--;
-            yield return new WaitForSeconds(1.0f);
         }
     }
 }
