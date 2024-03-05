@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     // How much spawner has to spend on enemies, cost increases as wave increases
     [SerializeField] private int startEnemyBudget;
     [SerializeField] private int difficultyIncrease;
-    private int currentEnemyBudget;
+    public int currentEnemyBudget;
 
     private int currentWave = 1;
 
