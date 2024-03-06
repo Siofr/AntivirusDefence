@@ -41,7 +41,7 @@ public class TileScript : MonoBehaviour
                 tileUI.SetActive(false);
                 UI.target = tower;
 
-                //description.text = chosenTower.GetComponent<TurretStats>().defenceDescription;
+                UI.targetEffect.text = chosenTower.GetComponent<TurretStats>().defenceDescription;
             }
         }
     }

@@ -840,7 +840,7 @@ PrefabInstance:
     - target: {fileID: 3448700713766481501, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
       propertyPath: m_text
-      value: Scan Area to Place your CPU!
+      value: Tap Tiles to Place Towers
       objectReference: {fileID: 0}
     - target: {fileID: 3800073220576067339, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
@@ -867,11 +867,6 @@ PrefabInstance:
       propertyPath: cpu
       value: 
       objectReference: {fileID: 372185153}
-    - target: {fileID: 4796126036710806117, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
-        type: 3}
-      propertyPath: m_text
-      value: 1/ 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5624626570474251660, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -936,7 +931,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2172228454282335608}
+      objectReference: {fileID: 2172228454282335609}
     - target: {fileID: 7317220443876501944, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -944,18 +939,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7317220443876501944, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: NextWave
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317220443876501944, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UIScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317220443876501944, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8047215586891040351, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
         type: 3}
@@ -1073,12 +1058,18 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2172228454282335607}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2172228454282335609}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5ef37c982167f40b7cdffcdf54f2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2172228454282335609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6652066414243764666, guid: f9a455e26d9804a45a439fe7a8e5e4f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2172228454282335607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

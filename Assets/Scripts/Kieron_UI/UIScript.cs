@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class UIScript : MonoBehaviour
     public Slider CPUHealthBar, targetHealthBar;
     public TMP_Text CPUHealth, cryptocoins, waveNo; // Variables Displaying CPU current health, current cryptocoins and the wave number
     public TMP_Text targetName, targetHealth, targetDamage, targetROF, targetSpeed, targetRange, targetEffect; // Variables Displaying the target enemy/tower's name, total health, current health, average damage, average Rate of Fire, Speed and Range
+    public int waveNumber = 1;
+    public int maxWave = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,11 @@ public class UIScript : MonoBehaviour
         CPUHealth.text = cpu.maxHealth.ToString() + " / " + cpu.health.ToString();
         CPUHealthBar.maxValue = cpu.maxHealth;
         CPUHealthBar.value = cpu.health;
+
+        if(cpu.health <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void UpdateCryptocoins()
@@ -67,6 +75,22 @@ public class UIScript : MonoBehaviour
     public void ArenaPlaced()
     {
         cpu = GameObject.FindGameObjectsWithTag("CPU")[0].GetComponent<CPUBehaviour>();
+        targetEffect.text = "Tap Tiles to Place Towers, Destroy Malware, Protect your CPU!";
+        waveNumber = 1;
+        waveNo.text = waveNumber.ToString() + " / " + maxWave.ToString();
+    }
+
+    public void NextWave()
+    {
+        if(waveNumber < maxWave)
+        {
+            waveNumber ++;
+            waveNo.text = waveNumber.ToString()  + " / " + maxWave.ToString();
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void UpdateTargetInfo()
