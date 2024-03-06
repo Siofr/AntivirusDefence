@@ -28,10 +28,24 @@ public class InteractionScript : MonoBehaviour
                         {
                             if (target.GetComponent<TileScript>().tower != null)
                             {
+                                if(UI.target != null)
+                                {
+                                    if(UI.target.GetComponent<TileScript>())
+                                    {
+                                        UI.target.GetComponent<TileScript>().tileUI.SetActive(false);
+                                    }
+                                }
                                 UI.target = target.GetComponent<TileScript>().tower;
                             }
                             else
                             {
+                                if(UI.target != null)
+                                {
+                                    if(UI.target.GetComponent<TileScript>())
+                                    {
+                                        UI.target.GetComponent<TileScript>().tileUI.SetActive(false);
+                                    }
+                                }
                                 UI.target = target;
                             }
                         }
