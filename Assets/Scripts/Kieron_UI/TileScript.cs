@@ -12,6 +12,7 @@ public class TileScript : MonoBehaviour
     //public EconomySystem economy;
     public TurretStats turret, raygun;
     public TMP_Text turretCost, raygunCost;
+    public TMP_Text description;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,8 @@ public class TileScript : MonoBehaviour
                 tower = Instantiate(chosenTower, towerTransform);
                 tileUI.SetActive(false);
                 UI.target = tower;
+
+                //description.text = chosenTower.GetComponent<TurretStats>().defenceDescription;
             }
         }
     }
