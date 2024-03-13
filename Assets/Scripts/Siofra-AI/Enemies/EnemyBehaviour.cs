@@ -62,7 +62,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     public void DamageCPU()
     {
-        EconomySystem.cryptocoins += enemyStats.coinDrop;
         Destroy(gameObject);
     }
 
@@ -72,7 +71,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             playEffect.Invoke();
         }
-        
+        EconomySystem.cryptocoins += enemyStats.coinDrop;
         Destroy(gameObject);
     }
 
