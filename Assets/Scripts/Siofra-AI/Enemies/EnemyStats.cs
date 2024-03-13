@@ -6,6 +6,7 @@ public class EnemyStats : ScriptableObject
     public string enemyName;
     public string enemyDescription;
     public bool effectToPlay;
+    public int splitTimes;
     public int enemyCost;
     public float spawnWeight;
     public float moveSpeed;

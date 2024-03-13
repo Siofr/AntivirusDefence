@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public bool gameStarted = false;
+
     // How often enemies spawn
     [SerializeField] private float spawnInterval;
     private float nextSpawn;
@@ -82,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         // If the spawner has "currency" to spend on enemies
-        if (currentEnemyBudget > 0)
+        if (currentEnemyBudget > 0 && gameStarted)
         {
             // If the time is greater than the next spawn then spawn an enemy
             if (Time.time > nextSpawn)
@@ -113,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         // If it doesn't we end the wave
-        else
+        else if (currentEnemyBudget <= 0 && gameStarted)
         {
             waveOver.Invoke();
         }
@@ -166,5 +168,10 @@ public class EnemySpawner : MonoBehaviour
         {
             UnlockEnemy();
         }
+    }
+
+    public void StartGame()
+    {
+        gameStarted = true;
     }
 }

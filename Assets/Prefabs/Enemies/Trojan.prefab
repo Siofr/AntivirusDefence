@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8728102651054919968}
   - component: {fileID: 8865156086978291821}
   - component: {fileID: 2952542381189714569}
+  - component: {fileID: 2695076246475760648}
   m_Layer: 0
   m_Name: Trojan
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +102,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -156,5 +157,33 @@ MonoBehaviour:
   - {fileID: 3938547222451422285, guid: 7d46a40b0f7d3b84eb79e4167d0f4f88, type: 3}
   rareEnemyList:
   - {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
+  - {fileID: 7453386978196196830, guid: 40ae9f3a9d11d9d42b15adb6e092469e, type: 3}
   commonEnemiesToSpawn: 4
   rareEnemiesToSpawn: 2
+--- !u!54 &2695076246475760648
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418457130084246600}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

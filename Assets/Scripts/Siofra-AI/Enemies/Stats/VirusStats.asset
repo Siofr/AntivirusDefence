@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c371639531aa6c24aa6b73ab8a275782, type: 3}
-  m_Name: EnemyTest
+  m_Name: VirusStats
   m_EditorClassIdentifier: 
-  enemyName: Basic Enemy
-  enemyDescription: A basic enemy that damages the CPU when it reaches it
-  effectToPlay: 0
-  enemyCost: 2
-  spawnWeight: 0.5
-  moveSpeed: 0.1
+  enemyName: Virus
+  enemyDescription: Splits into weaker viruses upon death
+  effectToPlay: 1
+  splitTimes: 3
+  enemyCost: 3
+  spawnWeight: 0.25
+  moveSpeed: 0.08
   health: 25
   damage: 5
   enemyFireRate: 0
