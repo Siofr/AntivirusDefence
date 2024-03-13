@@ -11,6 +11,7 @@ public class TileScript : MonoBehaviour
     public Transform towerTransform;
     //public EconomySystem economy;
     public TurretStats turret, raygun;
+    public TurretStats stats;
     public TMP_Text turretCost, raygunCost;
     public TMP_Text description;
     
@@ -29,7 +30,9 @@ public class TileScript : MonoBehaviour
 
     public void BuildTower(GameObject chosenTower)
     {
-        if(tower == null)
+        if(stats == chosenTower.GetComponent<TurretStats>())
+        {
+            if(tower == null)
         {
             int coins = EconomySystem.cryptocoins;
             int cost = chosenTower.GetComponent<DefenceStats>().defenceStats.defenceCost;
@@ -43,6 +46,19 @@ public class TileScript : MonoBehaviour
 
                 UI.targetEffect.text = chosenTower.GetComponent<TurretStats>().defenceDescription;
             }
+            else
+            {
+                // Not Enough Coins
+            }
+        }
+        }
+        else
+        {
+            stats = chosenTower.GetComponent<TurretStats>();
+
+            UI.target = chosenTower;
+
+            UI.targetEffect.text = chosenTower.GetComponent<TurretStats>().defenceDescription;
         }
     }
 }
