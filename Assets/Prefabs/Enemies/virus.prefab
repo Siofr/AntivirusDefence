@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7418448126406660757}
   - component: {fileID: 3690902110505280569}
   m_Layer: 0
-  m_Name: Virus
+  m_Name: virus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusPrefab: {fileID: 7453386978196196830}
   currentSplit: 1
-  maxSplit: 0
+  maxSplit: 3
   enemyBehaviourScript: {fileID: 1566163841856981027}
 --- !u!65 &-7418448126406660757
 BoxCollider:

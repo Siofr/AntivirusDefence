@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Virus
   enemyDescription: Splits into weaker viruses upon death
-  effectToPlay: 1
+  CPUEffectToPlay: 0
+  deathEffectToPlay: 1
   splitTimes: 3
   enemyCost: 3
   spawnWeight: 0.25

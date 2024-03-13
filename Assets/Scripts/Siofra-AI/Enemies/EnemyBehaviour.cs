@@ -29,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void Update()
     {
-        Walk();
+        // Walk();
     }
 
     private void Walk()
@@ -47,22 +47,32 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "CPU" && !enemyStats.effectToPlay)
+        if (other.gameObject.tag == "CPU" && !enemyStats.CPUEffectToPlay)
         {
             other.gameObject.GetComponent<IDamageable>().DealDamage(enemyStats.damage);
-            KillObject();
+            DamageCPU();
         }
         // if the enemy has an effect to play on death (adware) kill it and play the effect
-        else if (other.gameObject.tag == "CPU" && enemyStats.effectToPlay)
+        else if (other.gameObject.tag == "CPU" && enemyStats.CPUEffectToPlay)
         {
             other.gameObject.GetComponent<IDamageable>().DealDamage(enemyStats.damage);
             playEffect.Invoke();
         }
     }
 
-    public void KillObject()
+    public void DamageCPU()
     {
         EconomySystem.cryptocoins += enemyStats.coinDrop;
+        Destroy(gameObject);
+    }
+
+    public void KillObject()
+    {
+        if (enemyStats.deathEffectToPlay)
+        {
+            playEffect.Invoke();
+        }
+        
         Destroy(gameObject);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class VirusEffect : MonoBehaviour
 {
     [SerializeField] private GameObject virusPrefab;
-    public int currentSplit;
+    [SerializeField] public int currentSplit;
     public int maxSplit;
 
     [SerializeField] private EnemyBehaviour enemyBehaviourScript;
@@ -19,25 +19,22 @@ public class VirusEffect : MonoBehaviour
 
     public void Split()
     {
+
         for (int i = 0; i < currentSplit + 1; i++)
         {
+
             GameObject splitEnemy = Instantiate(virusPrefab);
             EnemyBehaviour splitEnemyScript = splitEnemy.GetComponent<EnemyBehaviour>();
 
             VirusEffect splitEnemyEffectScript = splitEnemy.GetComponent<VirusEffect>();
             splitEnemyEffectScript.currentSplit = currentSplit++;
 
-            if (currentSplit >= maxSplit)
-            {
-                Debug.Log("Broke");
-                break;
-            }
-
             splitEnemyScript.enemyPath = enemyBehaviourScript.enemyPath;
             splitEnemyScript.currentWaypoint = enemyBehaviourScript.currentWaypoint;
             splitEnemyScript.targetPosition = enemyBehaviourScript.targetPosition;
 
             splitEnemyScript.health = enemyBehaviourScript.health / splitEnemyEffectScript.currentSplit;
+            
         }
         Debug.Log("Split");
         Destroy(gameObject);

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Trojan Horse
   enemyDescription: Spawns a group of enemies upon death
-  effectToPlay: 1
+  CPUEffectToPlay: 0
+  deathEffectToPlay: 1
+  splitTimes: 0
   enemyCost: 20
   spawnWeight: 0.05
   moveSpeed: 0.02

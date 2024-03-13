@@ -5,7 +5,8 @@ public class EnemyStats : ScriptableObject
 {
     public string enemyName;
     public string enemyDescription;
-    public bool effectToPlay;
+    public bool CPUEffectToPlay;
+    public bool deathEffectToPlay;
     public int splitTimes;
     public int enemyCost;
     public float spawnWeight;
