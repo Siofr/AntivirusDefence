@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 197fcaff215399447af7118806ec5d53, type: 3}
-  m_Name: RayGun
+  m_Name: QuakeTower
   m_EditorClassIdentifier: 
-  defenceName: Ray Gun
-  defenceDescription: A sleek ray gun that fires one continuous laser beam after
-    a brief charge time
+  defenceName: Quake Tower
+  defenceDescription: 
   defenceHealth: 25
-  defenceCost: 50
-  defenceRange: 6
-  defenceDamage: 0.5
-  defenceSplashRadius: 0
+  defenceCost: 40
+  defenceRange: 4.5
+  defenceDamage: 2
   defenceFireRate: 0.1
-  chargeTime: 2
+  chargeTime: 5
