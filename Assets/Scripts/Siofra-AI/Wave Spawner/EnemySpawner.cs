@@ -160,11 +160,11 @@ public class EnemySpawner : MonoBehaviour
     public void StartNewWave()
     {
         // Increase the spawner's budget to spend on enemies based on the current wave and increase the wave
-        currentEnemyBudget = startEnemyBudget + (2 * currentWave);
+        currentEnemyBudget = startEnemyBudget + (difficultyIncrease * currentWave);
         currentWave++;
 
-        // Every five waves a new enemy gets added to the list of possible spawns
-        if (currentWave % 1 == 0)
+        // Every two waves a new enemy gets added to the list of possible spawns
+        if (currentWave % 2 == 0)
         {
             UnlockEnemy();
         }

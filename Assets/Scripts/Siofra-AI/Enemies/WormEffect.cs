@@ -10,6 +10,9 @@ public class WormEffect : MonoBehaviour
     private float nextSpawn;
     private bool hasReplicated = false;
 
+    public Collider[] colliders;
+    public float radius;
+
     private void Awake()
     {
         nextSpawn = spawnInterval + Time.time;
@@ -20,7 +23,7 @@ public class WormEffect : MonoBehaviour
     {
         if (nextSpawn < Time.time && !hasReplicated)
         {
-            GameObject wormSpawn = Instantiate(wormPrefab, transform.position, Quaternion.identity);
+            GameObject wormSpawn = Instantiate(wormPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.05f), Quaternion.identity);
 
             EnemyBehaviour wormSpawnScript = wormSpawn.GetComponent<EnemyBehaviour>();
 
