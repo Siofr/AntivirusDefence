@@ -29,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void Update()
     {
-        // Walk();
+        Walk();
     }
 
     private void Walk()
