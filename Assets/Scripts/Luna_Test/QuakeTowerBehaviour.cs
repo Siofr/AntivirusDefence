@@ -9,7 +9,6 @@ public class QuakeTowerBehaviour : MonoBehaviour
     private TurretStats stats;
     public List<GameObject> enemyList;
 
-    //public List<GameObject> targetList;
     public List<IDamageable> targetInterface;
 
     public bool activated = false;
@@ -30,21 +29,7 @@ public class QuakeTowerBehaviour : MonoBehaviour
             if (enemyList[0] == null)
             {
                 enemyList.RemoveAt(0);
-                //targetList.RemoveAt(0);
             }
-
-            /*if (*//*targetList == null && *//*enemyList.Count > 0)
-            {
-                for (int i = 0; i < enemyList.Count; i++)
-                {
-                    targetInterface.Add(targetList[i].GetComponent<IDamageable>());
-                }
-            }*/
-
-            /*if (activated)
-            {
-                QuakeAttack((IDamageable)targetInterface);
-            }*/
         }
     }
 
@@ -53,9 +38,7 @@ public class QuakeTowerBehaviour : MonoBehaviour
         // If an enemy enters the range of the turret at it to a list
         if (other.gameObject.tag == "Enemy")
         {
-            // Enemy Found
             enemyList.Add(other.gameObject);
-            //targetInterface.Add(other.gameObject.GetComponent<IDamageable>());
         }
     }
 
@@ -65,15 +48,6 @@ public class QuakeTowerBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyList.Remove(other.gameObject);
-            //targetInterface.Remove(other.gameObject.GetComponent<IDamageable>());
         }
     }
-
-    /*public void QuakeAttack(IDamageable targetList)
-    {
-        foreach(GameObject target in enemyList)
-        {
-            targetList.DealDamage(stats.defenceDamage);
-        }
-    }*/
 }

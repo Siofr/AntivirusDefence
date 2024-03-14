@@ -52,7 +52,6 @@ public class Accelerometer : MonoBehaviour
 
         if(deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
         {
-            //quakeTower.activated = true;
             damageAll.TremorEffect();
         }
     }
