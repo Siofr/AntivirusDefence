@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Accelerometer : MonoBehaviour
 {
-    public EnemyBehaviour adwareBehaviour;
-    public EnemyBehaviour enemyBehaviour;
-    public bool damage = false;
+    public QuakeTowerBehaviour quakeTower;
+    public DamageAll1 damageAll;
     //#region Instance
     private static Accelerometer instance;
     public static Accelerometer Instance
@@ -45,7 +44,7 @@ public class Accelerometer : MonoBehaviour
         shakeDetectionThreshold *= shakeDetectionThreshold;
         lowPassValue = Input.acceleration;
     }
-    private void Update()
+    public void Update()
     {
         Vector3 acceleration = Input.acceleration;
         lowPassValue = Vector3.Lerp(lowPassValue, acceleration, lowPassFilterFactor);
@@ -53,16 +52,7 @@ public class Accelerometer : MonoBehaviour
 
         if(deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
         {
-            EnemyStop();
+            damageAll.TremorEffect();
         }
-    }
-
-    void EnemyStop()
-    {
-        if(damage == true)
-        {
-            adwareBehaviour.health -= 20f;
-            enemyBehaviour.health -= 20f;
-        }  
     }
 }
