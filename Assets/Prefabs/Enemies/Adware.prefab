@@ -4938,8 +4938,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.73066425, y: 0.6695354, z: 1}
+  m_Center: {x: -0.008443762, y: 0.6968291, z: 0}
 --- !u!114 &1103759285141063411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,6 +4987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 2
   errorSound: {fileID: 8300000, guid: dd77d5ecc84325a42b6ac3c2919ee1e6, type: 3}
+  spamCooldown: 5
 --- !u!54 &9120220723900276863
 Rigidbody:
   m_ObjectHideFlags: 0

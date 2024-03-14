@@ -22,11 +22,9 @@ public class VirusEffect : MonoBehaviour
     {
         if (currentSplit <= maxSplit)
         {
-            Debug.Log("Successful Split Number: " + currentSplit.ToString());
             for (int i = 1; i <= 2; i++)
             {
-                GameObject splitEnemy = Instantiate(virusPrefab);
-                splitEnemy.transform.position = -transform.forward * 0.01f * i;
+                GameObject splitEnemy = Instantiate(virusPrefab, transform.position, Quaternion.identity);
                 EnemyBehaviour splitEnemyScript = splitEnemy.GetComponent<EnemyBehaviour>();
 
                 VirusEffect splitEnemyEffectScript = splitEnemy.GetComponent<VirusEffect>();
@@ -39,10 +37,5 @@ public class VirusEffect : MonoBehaviour
                 splitEnemyScript.health = enemyBehaviourScript.health / splitEnemyEffectScript.currentSplit;
             }
         } 
-        else
-        {
-            Debug.Log("Failed Split Number: " + currentSplit.ToString());
-            Debug.Log("Whuh");
-        }
     }
 }

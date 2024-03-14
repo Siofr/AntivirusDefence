@@ -9,10 +9,37 @@ public class AdwareEffect : MonoBehaviour
     private List<GameObject> inactivePopups = new List<GameObject>();
     private Transform adwarePopups;
 
+    [SerializeField] private float spamCooldown;
+    private float nextSpam;
+
     void Awake ()
     {
         // Find the adware UI Element
         adwarePopups = GameObject.FindGameObjectsWithTag("Adware")[0].transform;
+
+        nextSpam = Time.time + spamCooldown;
+    }
+
+    private void Update()
+    {
+        if (nextSpam < Time.time)
+        {
+            SFXManager.instance.PlaySFX(errorSound, transform, 0.75f);
+
+            foreach (Transform popup in adwarePopups)
+            {
+                if (!popup.gameObject.activeInHierarchy)
+                {
+                    inactivePopups.Add(popup.gameObject);
+                }
+            }
+
+            int randomIndex = Random.Range(0, inactivePopups.Count - 1);
+            inactivePopups[randomIndex].SetActive(true);
+            inactivePopups.RemoveAt(randomIndex);
+
+            nextSpam = spamCooldown + Time.time;
+        }
     }
 
     public void PopupAttack()
