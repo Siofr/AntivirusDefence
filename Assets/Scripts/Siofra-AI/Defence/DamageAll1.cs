@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageAll : MonoBehaviour
+public class DamageAll1 : MonoBehaviour
 {
     public QuakeTowerBehaviour quakeTower;
     [SerializeField] private float damage;
