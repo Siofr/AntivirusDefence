@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioInput : MonoBehaviour
 {
+    public EMPTowerBehaviour empTower;
     public AudioSource source;
     public AudioDetection audioDetection;
 
@@ -44,17 +45,19 @@ public class AudioInput : MonoBehaviour
             int counter = 3;
             while (true)
             {
-                if (counter != 0)
+                foreach (GameObject enemy in empTower.enemyList)
                 {
-                    adwareStats.moveSpeed = 0f;
-                    enemyStats.moveSpeed = 0f;
-                }
-                else
-                {
-                    adwareStats.moveSpeed = 0.75f;
-                    enemyStats.moveSpeed = 1f;
-                    pause = false;
-                    break;
+                    EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                    if (counter != 0)
+                    {
+                        enemyScript.speed = 0f;
+                    }
+                    else
+                    {
+                        enemyScript.speed = enemyStats.moveSpeed;
+                        pause = false;
+                        break;
+                    }
                 }
                 counter--;
                 yield return new WaitForSeconds(1.0f);

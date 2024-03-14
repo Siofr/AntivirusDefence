@@ -10,6 +10,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public UnityEvent playEffect;
     public List<Vector3> enemyPath = new List<Vector3>();
     public float health;
+    public float speed;
 
     public Vector3 targetPosition;
     public int currentWaypoint = 0;
@@ -19,6 +20,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     void Awake()
     {
         health = enemyStats.health;
+        speed = enemyStats.moveSpeed;
 
         // agent = GetComponent<NavMeshAgent>();
         // agent.speed = enemyStats.moveSpeed;
@@ -36,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         transform.forward = Vector3.RotateTowards(transform.forward, targetPosition - transform.position, 60f, 0.0f);
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyStats.moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         if (transform.position == targetPosition)
         {
