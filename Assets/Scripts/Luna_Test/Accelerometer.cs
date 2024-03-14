@@ -6,7 +6,7 @@ using UnityEngine;
 public class Accelerometer : MonoBehaviour
 {
     public QuakeTowerBehaviour quakeTower;
-    public DamageAll damageAll;
+    public DamageAll1 damageAll;
     //#region Instance
     private static Accelerometer instance;
     public static Accelerometer Instance
