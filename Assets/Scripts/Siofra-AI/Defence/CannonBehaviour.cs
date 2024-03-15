@@ -41,6 +41,14 @@ public class CannonBehaviour : MonoBehaviour
             if (enemyList[0] == null)
             {
                 enemyList.RemoveAt(0);
+
+                for (int i = 0; i < enemyList.Count; i++)
+                {
+                    if (enemyList[i] == null)
+                    {
+                        enemyList.RemoveAt(i);
+                    }
+                }
             }
 
             // If the turret has a target shoot at it, or else get a new target from the first position on the list

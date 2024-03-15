@@ -10,6 +10,7 @@ public class TrojanEffect : MonoBehaviour
     [SerializeField] private int commonEnemiesToSpawn;
     [SerializeField] private int rareEnemiesToSpawn;
 
+    private int numberEnemiesSpawned = 0;
     private EnemyBehaviour pathingScript;
 
     // Start is called before the first frame update
@@ -30,12 +31,13 @@ public class TrojanEffect : MonoBehaviour
     {
         for (int i = 0; i < numberToSpawn; i++)
         {
-            GameObject enemySpawned = Instantiate(commonEnemyList[Random.Range(0, commonEnemyList.Count - 1)], transform.position - transform.forward * (0.05f * i), Quaternion.identity);
+            GameObject enemySpawned = Instantiate(enemyList[Random.Range(0, enemyList.Count)], transform.position - transform.forward * (0.05f * numberEnemiesSpawned), Quaternion.identity);
             EnemyBehaviour enemySpawnedScript = enemySpawned.GetComponent<EnemyBehaviour>();
 
             enemySpawnedScript.targetPosition = pathingScript.targetPosition;
             enemySpawnedScript.currentWaypoint = pathingScript.currentWaypoint;
             enemySpawnedScript.enemyPath = pathingScript.enemyPath;
+            numberEnemiesSpawned++;
         }
     }
 }

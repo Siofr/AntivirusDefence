@@ -19,8 +19,8 @@ MonoBehaviour:
   splitTimes: 0
   enemyCost: 2
   spawnWeight: 0.4
-  moveSpeed: 0.1
-  health: 15
+  moveSpeed: 0.12
+  health: 20
   damage: 5
   enemyFireRate: 0
   coinDrop: 5

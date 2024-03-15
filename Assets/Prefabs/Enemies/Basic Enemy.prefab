@@ -75,6 +75,8 @@ MonoBehaviour:
   enemyPath: []
   health: 0
   targetPosition: {x: 0, y: 0, z: 0}
+  currentWaypoint: 0
+  economy: {fileID: 0}
 --- !u!54 &3121753709572006659
 Rigidbody:
   m_ObjectHideFlags: 0

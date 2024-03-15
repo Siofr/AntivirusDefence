@@ -487,6 +487,11 @@ PrefabInstance:
       objectReference: {fileID: 1667625044}
     - target: {fileID: 253892283766582036, guid: d68c808b534ad994eb13f3a0f7e1e42b,
         type: 3}
+      propertyPath: spawnInterval
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 253892283766582036, guid: d68c808b534ad994eb13f3a0f7e1e42b,
+        type: 3}
       propertyPath: difficultyIncrease
       value: 5
       objectReference: {fileID: 0}
@@ -615,6 +620,11 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 2172228454282335608}
+    - target: {fileID: 2103635449056270400, guid: d68c808b534ad994eb13f3a0f7e1e42b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2156079704376787363, guid: d68c808b534ad994eb13f3a0f7e1e42b,
         type: 3}
       propertyPath: UI
@@ -740,6 +750,11 @@ PrefabInstance:
       propertyPath: economy
       value: 
       objectReference: {fileID: 1667625044}
+    - target: {fileID: 7482180704836838344, guid: d68c808b534ad994eb13f3a0f7e1e42b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7680445295099862096, guid: d68c808b534ad994eb13f3a0f7e1e42b,
         type: 3}
       propertyPath: UI

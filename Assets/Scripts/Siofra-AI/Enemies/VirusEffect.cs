@@ -14,7 +14,6 @@ public class VirusEffect : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemyBehaviourScript.health = enemyBehaviourScript.health / currentSplit;
         maxSplit = enemyBehaviourScript.enemyStats.splitTimes;
     }
 
@@ -30,11 +29,10 @@ public class VirusEffect : MonoBehaviour
                 VirusEffect splitEnemyEffectScript = splitEnemy.GetComponent<VirusEffect>();
                 splitEnemyEffectScript.currentSplit = currentSplit + 1;
 
+                splitEnemyScript.health = enemyBehaviourScript.health / currentSplit;
                 splitEnemyScript.enemyPath = enemyBehaviourScript.enemyPath;
                 splitEnemyScript.currentWaypoint = enemyBehaviourScript.currentWaypoint;
                 splitEnemyScript.targetPosition = enemyBehaviourScript.targetPosition;
-
-                splitEnemyScript.health = enemyBehaviourScript.health / splitEnemyEffectScript.currentSplit;
             }
         } 
     }

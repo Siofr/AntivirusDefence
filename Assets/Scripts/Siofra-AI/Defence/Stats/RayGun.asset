@@ -16,9 +16,9 @@ MonoBehaviour:
   defenceDescription: A sleek ray gun that fires one continuous laser beam after
     a brief charge time
   defenceHealth: 25
-  defenceCost: 50
+  defenceCost: 75
   defenceRange: 6
-  defenceDamage: 2
+  defenceDamage: 1.5
   defenceSplashRadius: 0
   defenceFireRate: 0.1
   chargeTime: 2

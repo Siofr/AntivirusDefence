@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailSpawnObject: {fileID: 8428962348943669333}
-  trailLifetime: 0.05
+  trailLifetime: 0.02
 --- !u!120 &4062623582549608636
 LineRenderer:
   serializedVersion: 2
@@ -117,8 +117,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.011538521
-        value: 0.011985779
+        time: 0.015475289
+        value: 0.0026474
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 8786995384499794261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.529, y: 0.612, z: 0}
+  m_LocalPosition: {x: 0.058, y: 0.612, z: 0.503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}
@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}
@@ -274,7 +274,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de0808de03ca38f4f999e3340df4d8fd,
         type: 3}

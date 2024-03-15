@@ -42,6 +42,7 @@ public class PlaceObject : MonoBehaviour
         {
             foreach(ARRaycastHit hit in hits)
             {
+                Destroy(GameObject.Find("Trackables"));
                 Pose pose = hit.pose;
                 playArea.transform.position = pose.position;
                 playArea.transform.rotation = pose.rotation;
