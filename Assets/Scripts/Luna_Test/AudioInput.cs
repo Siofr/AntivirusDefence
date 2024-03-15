@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class AudioInput : MonoBehaviour
 {
+    public EMPTowerBehaviour empTower;
     public AudioSource source;
     public AudioDetection audioDetection;
 
-    public EnemyStats adwareStats;
-    public EnemyStats enemyStats;
     public bool pause = false;
 
     public float loudnessSensibility = 100;
@@ -44,21 +43,28 @@ public class AudioInput : MonoBehaviour
             int counter = 3;
             while (true)
             {
-                if (counter != 0)
-                {
-                    adwareStats.moveSpeed = 0f;
-                    enemyStats.moveSpeed = 0f;
-                }
-                else
-                {
-                    adwareStats.moveSpeed = 0.75f;
-                    enemyStats.moveSpeed = 1f;
-                    pause = false;
-                    break;
-                }
+                    if (counter != 0)
+                    {
+                        foreach (GameObject enemy in empTower.targetList)
+                        {
+                            EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                            enemyScript.speed -= enemyScript.speed;
+                        }
+                    }
+                    else
+                    {
+                        foreach (GameObject enemy in empTower.targetList)
+                        {
+                            EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                            enemyScript.speed = enemyScript.temp;
+                        }
+                        pause = false;
+                        break;
+                    }
                 counter--;
                 yield return new WaitForSeconds(1.0f);
             }
         }
+        StopCoroutine(EnemyStop());
     }
 }

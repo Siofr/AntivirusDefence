@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
+using Unity.VisualScripting;
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
@@ -10,6 +11,8 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public UnityEvent playEffect;
     public List<Vector3> enemyPath = new List<Vector3>();
     public float health;
+    public float speed;
+    public float temp;
 
     public Vector3 targetPosition;
     public int currentWaypoint = 0;
@@ -19,6 +22,14 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     void Awake()
     {
         health = enemyStats.health;
+<<<<<<< Luna-branch
+        // agent = GetComponent<NavMeshAgent>();
+        // agent.speed = enemyStats.moveSpeed;
+
+        // playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
+        // agent.SetDestination(playerBase.transform.position);
+=======
+>>>>>>> main
     }
 
     void Update()
@@ -30,7 +41,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         transform.forward = Vector3.RotateTowards(transform.forward, targetPosition - transform.position, 60f, 0.0f);
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyStats.moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         if (transform.position == targetPosition)
         {
@@ -79,5 +90,15 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             KillObject();
         }
+    }
+
+    public void ReduceSpeed()
+    {
+        speed = 0;
+    }
+
+    public void IncreaseSpeed()
+    {
+        speed = temp;
     }
 }
