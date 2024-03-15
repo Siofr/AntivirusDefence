@@ -1490,18 +1490,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4659653667838088502}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4292354120836842728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,18 +2274,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4659653667838088502}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6026049855551159587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,11 +2678,7 @@ MonoBehaviour:
   UI: {fileID: 0}
   tower: {fileID: 0}
   towerTransform: {fileID: 115493597240047264}
-  turret: {fileID: 11400000, guid: 422efa38a94938349bb199ff955301aa, type: 2}
-  raygun: {fileID: 11400000, guid: 76c0046efdb955f44bfe61acb78217b8, type: 2}
   stats: {fileID: 0}
-  turretCost: {fileID: 4406578258232091267}
-  raygunCost: {fileID: 6262785367461211888}
   description: {fileID: 0}
 --- !u!1 &9217515861167196258
 GameObject:
