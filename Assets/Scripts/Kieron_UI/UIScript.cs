@@ -58,7 +58,7 @@ public class UIScript : MonoBehaviour
 
         if(cpu.health <= 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 
@@ -89,7 +89,7 @@ public class UIScript : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
