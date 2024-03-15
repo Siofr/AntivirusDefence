@@ -15,7 +15,7 @@ public class UIScript : MonoBehaviour
 
     //private TowerScript targetTower;
     //private MalwareScript targetMalware;
-    private TurretStats targetTower;
+    public TurretStats targetTower;
     private EnemyStats targetMalware;
 
     private TileScript targetTile;
@@ -23,7 +23,7 @@ public class UIScript : MonoBehaviour
     public GameObject pauseScreen, infoBox;
     public Slider CPUHealthBar, targetHealthBar;
     public TMP_Text CPUHealth, cryptocoins, waveNo; // Variables Displaying CPU current health, current cryptocoins and the wave number
-    public TMP_Text targetName, targetHealth, targetDamage, targetROF, targetSpeed, targetRange, targetEffect; // Variables Displaying the target enemy/tower's name, total health, current health, average damage, average Rate of Fire, Speed and Range
+    public TMP_Text targetName, targetHealth, targetCost, targetDamage, targetROF, targetSpeed, targetRange, targetEffect; // Variables Displaying the target enemy/tower's name, total health, current health, average damage, average Rate of Fire, Speed and Range
     public int waveNumber = 1;
     public int maxWave = 10;
 
@@ -107,6 +107,8 @@ public class UIScript : MonoBehaviour
                     }
                     targetTile = target.GetComponent<TileScript>();
                     targetTile.tileUI.SetActive(true);
+
+                    Debug.Log("Target = Tile");
                 }
                 break;
             }
@@ -129,16 +131,21 @@ public class UIScript : MonoBehaviour
 
                     targetTower = target.GetComponentInParent<DefenceStats>().defenceStats;
                     targetName.text = targetTower.defenceName;
-                    targetHealth.text = target.GetComponentInParent<DefenceStats>().health.ToString() + " / " + targetTower.defenceHealth.ToString();
+                    targetCost.text = targetTower.defenceCost.ToString();
+                    //targetHealth.text = target.GetComponentInParent<DefenceStats>().health.ToString() + " / " + targetTower.defenceHealth.ToString();
                     targetDamage.text = "Deals " + targetTower.defenceDamage.ToString() + " Damage";
                     targetROF.text = "Every " + targetTower.defenceFireRate.ToString() + " Seconds";
                     targetRange.text = "Radius: " + targetTower.defenceRange.ToString() + " cm";
                     targetEffect.text = targetTower.defenceDescription;
                     targetHealthBar.maxValue = targetTower.defenceHealth;
                     targetHealthBar.value = target.GetComponentInParent<DefenceStats>().health;
+                    targetHealth.gameObject.SetActive(false);
                     targetSpeed.gameObject.SetActive(false);
                     targetRange.gameObject.SetActive(true);
 
+                    target.GetComponentInParent<DefenceStats>().upgradeUI.SetActive(true);
+
+                    Debug.Log("Target = turret");
                 }
                 else
                 {
@@ -171,8 +178,11 @@ public class UIScript : MonoBehaviour
                     targetEffect.text = targetMalware.enemyDescription;
                     targetHealthBar.maxValue = targetMalware.health;
                     targetHealthBar.value = target.GetComponent<EnemyBehaviour>().health;
+                    targetCost.gameObject.SetActive(false);
                     targetRange.gameObject.SetActive(false);
                     targetSpeed.gameObject.SetActive(true);
+
+                    Debug.Log("Target = Enemy");
                 }
                 else
                 {
@@ -182,7 +192,28 @@ public class UIScript : MonoBehaviour
             }
             default:
             {
-                infoBox.SetActive(false);
+                if(target.GetComponent<DefenceStats>())
+                {
+                    infoBox.SetActive(true);
+                    targetTower = target.GetComponent<DefenceStats>().defenceStats;
+                    targetName.text = targetTower.defenceName;
+                    targetCost.text = targetTower.defenceCost.ToString();
+                    targetDamage.text = "Deals " + targetTower.defenceDamage.ToString() + " Damage";
+                    targetROF.text = "Every " + targetTower.defenceFireRate.ToString() + " Seconds";
+                    targetRange.text = "Radius: " + targetTower.defenceRange.ToString() + " cm";
+                    targetEffect.text = targetTower.defenceDescription;
+                    targetHealthBar.maxValue = targetTower.defenceHealth;
+                    targetHealthBar.value = target.GetComponent<DefenceStats>().health;
+                    targetHealth.gameObject.SetActive(false);
+                    targetSpeed.gameObject.SetActive(false);
+                    targetRange.gameObject.SetActive(true);
+
+                    Debug.Log("Target = turret 2");
+                }
+                else
+                {
+                    infoBox.SetActive(false);
+                }
                 break;
             }
         }
