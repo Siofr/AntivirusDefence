@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
+  explosion: {fileID: 6783727905049086345, guid: 0f317dfa3e6dcb14bb2c5928710e2239,
+    type: 3}
   target: {fileID: 0}
   trailSpawnObject: {fileID: 1105092024986237296}
   trailLifetime: 0.1
