@@ -19,12 +19,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     void Awake()
     {
         health = enemyStats.health;
-
-        // agent = GetComponent<NavMeshAgent>();
-        // agent.speed = enemyStats.moveSpeed;
-
-        // playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
-        // agent.SetDestination(playerBase.transform.position);
     }
 
     void Update()

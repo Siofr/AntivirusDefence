@@ -20,7 +20,7 @@ MonoBehaviour:
   enemyCost: 20
   spawnWeight: 0.05
   moveSpeed: 0.02
-  health: 20
+  health: 100
   damage: 25
   enemyFireRate: 0
   coinDrop: 30
