@@ -24,7 +24,7 @@ public class VirusEffect : MonoBehaviour
         {
             for (int i = 1; i <= 2; i++)
             {
-                GameObject splitEnemy = Instantiate(virusPrefab, transform.position, Quaternion.identity);
+                GameObject splitEnemy = Instantiate(virusPrefab, transform.position - transform.forward * (0.05f * i), Quaternion.identity);
                 EnemyBehaviour splitEnemyScript = splitEnemy.GetComponent<EnemyBehaviour>();
 
                 VirusEffect splitEnemyEffectScript = splitEnemy.GetComponent<VirusEffect>();

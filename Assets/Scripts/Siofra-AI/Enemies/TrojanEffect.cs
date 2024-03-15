@@ -30,7 +30,7 @@ public class TrojanEffect : MonoBehaviour
     {
         for (int i = 0; i < numberToSpawn; i++)
         {
-            GameObject enemySpawned = Instantiate(commonEnemyList[Random.Range(0, commonEnemyList.Count - 1)]);
+            GameObject enemySpawned = Instantiate(commonEnemyList[Random.Range(0, commonEnemyList.Count - 1)], transform.position - transform.forward * (0.05f * i), Quaternion.identity);
             EnemyBehaviour enemySpawnedScript = enemySpawned.GetComponent<EnemyBehaviour>();
 
             enemySpawnedScript.targetPosition = pathingScript.targetPosition;

@@ -7,16 +7,27 @@ public class DamageAll : MonoBehaviour
     public QuakeTowerBehaviour quakeTower;
     [SerializeField] private float damage;
     [SerializeField] private float abilityCooldown;
+
+    private TurretStats stats;
+    private float radius;
+
     private float nextUse;
+
+    void Awake()
+    {
+        radius = stats.defenceRange;
+    }
 
     public void TremorEffect()
     {
         if (nextUse < Time.time)
         {
             nextUse = abilityCooldown + Time.time;
-            foreach (GameObject enemy in quakeTower.enemyList)
+
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+            foreach (var hitCollider in hitColliders)
             {
-                EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                EnemyBehaviour enemyScript = hitCollider.gameObject.transform.GetComponent<EnemyBehaviour>();
                 enemyScript.DealDamage(damage);
             }
         }
