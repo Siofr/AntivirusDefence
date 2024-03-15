@@ -18,7 +18,7 @@ MonoBehaviour:
   defenceHealth: 25
   defenceCost: 50
   defenceRange: 6
-  defenceDamage: 0.5
+  defenceDamage: 2
   defenceSplashRadius: 0
   defenceFireRate: 0.1
   chargeTime: 2

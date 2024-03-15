@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonEnemyList:
   - {fileID: 3938547222451422285, guid: 7d46a40b0f7d3b84eb79e4167d0f4f88, type: 3}
+  - {fileID: 7534460464241631306, guid: e3a8136de3fd6414e8c2e307afca8936, type: 3}
   rareEnemyList:
   - {fileID: 7114591838161270010, guid: a3220b248f9bdee4fa2aec9849928dd0, type: 3}
   - {fileID: 7453386978196196830, guid: 40ae9f3a9d11d9d42b15adb6e092469e, type: 3}

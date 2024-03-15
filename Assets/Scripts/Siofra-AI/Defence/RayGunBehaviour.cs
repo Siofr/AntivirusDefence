@@ -46,7 +46,6 @@ public class RayGunBehaviour : MonoBehaviour
         // If the enemy List is greater than 0, meaning an enemy is present
         if (isCharged)
         {
-            Debug.Log("Why are you here");
             // If the first item of the list is null remove it (Cleans up killed enemies)
             if (enemyList[0] == null)
             {
