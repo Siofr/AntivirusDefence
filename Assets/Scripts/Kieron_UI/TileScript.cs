@@ -74,9 +74,4 @@ public class TileScript : MonoBehaviour
             }
         }
     }
-
-    public void SellTower()
-    {
-        
-    }
 }
