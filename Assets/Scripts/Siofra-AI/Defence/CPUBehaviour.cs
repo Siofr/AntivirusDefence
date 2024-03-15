@@ -21,7 +21,7 @@ public class CPUBehaviour : MonoBehaviour, IDamageable
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(currentScene.name);
+            // SceneManager.LoadScene(currentScene.name);
         }
     }
 }
