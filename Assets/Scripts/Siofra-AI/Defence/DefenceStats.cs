@@ -12,4 +12,14 @@ public class DefenceStats : MonoBehaviour
     {
         health = defenceStats.defenceHealth;
     }
+
+    public void SellTower()
+    {
+        Destroy(gameObject);
+    }
+
+    public void UpgradeTower()
+    {
+        
+    }
 }
