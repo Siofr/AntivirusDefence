@@ -8,6 +8,7 @@ using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
 public class PlaceObject : MonoBehaviour
 {
     [SerializeField] private GameObject playArea;
+    [SerializeField] private GameObject startButton;
 
     private ARRaycastManager aRRaycastManager;
     private ARPlaneManager aRPlaneManager;
@@ -41,10 +42,12 @@ public class PlaceObject : MonoBehaviour
         {
             foreach(ARRaycastHit hit in hits)
             {
+                Destroy(GameObject.Find("Trackables"));
                 Pose pose = hit.pose;
                 playArea.transform.position = pose.position;
                 playArea.transform.rotation = pose.rotation;
                 aRPlaneManager.enabled = false;
+                startButton.SetActive(true);
                 playArea.SetActive(true);
             }
         }

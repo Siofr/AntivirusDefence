@@ -15,9 +15,9 @@ MonoBehaviour:
   defenceName: Cannon
   defenceDescription: Fires an explosion at an enemy that does damage in a radius
   defenceHealth: 25
-  defenceCost: 100
-  defenceRange: 6
-  defenceDamage: 20
+  defenceCost: 125
+  defenceRange: 0.1
+  defenceDamage: 40
   defenceSplashRadius: 3
   defenceFireRate: 5
   chargeTime: 0

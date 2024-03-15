@@ -22,14 +22,14 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     void Awake()
     {
         health = enemyStats.health;
-        speed = enemyStats.moveSpeed;
-        temp = speed;
-
+<<<<<<< Luna-branch
         // agent = GetComponent<NavMeshAgent>();
         // agent.speed = enemyStats.moveSpeed;
 
         // playerBase = GameObject.FindGameObjectsWithTag("CPU")[0];
         // agent.SetDestination(playerBase.transform.position);
+=======
+>>>>>>> main
     }
 
     void Update()

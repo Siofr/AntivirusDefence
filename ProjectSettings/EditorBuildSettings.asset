@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Siofra-Scenes/Camera AR Test.unity
     guid: c1522004a4e79d846819c1aa34caf720
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 7bd012ec5fee01341af450a29dd21d4e
+  - enabled: 1
     path: Assets/Scenes/PlaytestScene.unity
     guid: 8352bb54b703277499e1ce69094a7001
   - enabled: 0

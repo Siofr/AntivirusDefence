@@ -46,11 +46,18 @@ public class RayGunBehaviour : MonoBehaviour
         // If the enemy List is greater than 0, meaning an enemy is present
         if (isCharged)
         {
-            Debug.Log("Why are you here");
             // If the first item of the list is null remove it (Cleans up killed enemies)
             if (enemyList[0] == null)
             {
                 enemyList.RemoveAt(0);
+
+                for (int i = 0; i < enemyList.Count; i++)
+                {
+                    if (enemyList[i] == null)
+                    {
+                        enemyList.RemoveAt(i);
+                    }
+                }
             }
 
             // If the turret has a target shoot at it, or else get a new target from the first position on the list

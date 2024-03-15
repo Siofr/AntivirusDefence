@@ -164,7 +164,7 @@ public class EnemySpawner : MonoBehaviour
         currentWave++;
 
         // Every two waves a new enemy gets added to the list of possible spawns
-        if (currentWave % 2 == 0)
+        if (currentWave % 1 == 0)
         {
             UnlockEnemy();
         }

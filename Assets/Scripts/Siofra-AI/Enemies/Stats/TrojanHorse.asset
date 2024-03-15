@@ -18,9 +18,9 @@ MonoBehaviour:
   deathEffectToPlay: 1
   splitTimes: 0
   enemyCost: 20
-  spawnWeight: 0.05
-  moveSpeed: 0.02
-  health: 20
+  spawnWeight: 0.15
+  moveSpeed: 0.06
+  health: 150
   damage: 25
   enemyFireRate: 0
-  coinDrop: 30
+  coinDrop: 50
