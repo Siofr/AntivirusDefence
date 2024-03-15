@@ -16,6 +16,7 @@ public class TileScript : MonoBehaviour
     //public TMP_Text turretCost, raygunCost;
     public TMP_Text description;
     private bool built = false;
+    public bool showUI = false;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,11 @@ public class TileScript : MonoBehaviour
 
             EconomySystem.cryptocoins += cost;
         }
+    }
+
+    public void ChangeUI(bool change)
+    {
+        showUI = change;
     }
 
     public void BuildTower(GameObject chosenTower)

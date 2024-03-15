@@ -449,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1135837980968649697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -556,21 +556,9 @@ MonoBehaviour:
         m_MethodName: BuildTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5312988444582093224, guid: 0f1b032e9b38f1d45bd0afcf059e15eb,
+          m_ObjectArgument: {fileID: 2084492988439234568, guid: 8ef1d9a356f7f8d489af5109379ddc63,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4659653667838088502}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1046,7 +1034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2560393435904537046
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1153,21 +1141,9 @@ MonoBehaviour:
         m_MethodName: BuildTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5312988444582093224, guid: 3ec74c84151352548ae7ad3c2e1083d5,
+          m_ObjectArgument: {fileID: 443167879064394888, guid: 0a6e66f63bf090e49bbd1d8baf51f4a3,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4659653667838088502}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1426,6 +1402,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5745100576203664360}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: ChangeUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4659653667838088502}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1564,6 +1552,7 @@ MonoBehaviour:
   towerTransform: {fileID: 115493597240047264}
   stats: {fileID: 0}
   description: {fileID: 0}
+  showUI: 0
 --- !u!1 &9217515861167196258
 GameObject:
   m_ObjectHideFlags: 0
