@@ -8,8 +8,6 @@ public class AudioInput : MonoBehaviour
     public AudioSource source;
     public AudioDetection audioDetection;
 
-    public EnemyStats adwareStats;
-    public EnemyStats enemyStats;
     public bool pause = false;
 
     public float loudnessSensibility = 100;
@@ -45,23 +43,28 @@ public class AudioInput : MonoBehaviour
             int counter = 3;
             while (true)
             {
-                foreach (GameObject enemy in empTower.enemyList)
-                {
-                    EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
                     if (counter != 0)
                     {
-                        enemyScript.speed = 0f;
+                        foreach (GameObject enemy in empTower.targetList)
+                        {
+                            EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                            enemyScript.speed -= enemyScript.speed;
+                        }
                     }
                     else
                     {
-                        enemyScript.speed = enemyStats.moveSpeed;
+                        foreach (GameObject enemy in empTower.targetList)
+                        {
+                            EnemyBehaviour enemyScript = enemy.GetComponent<EnemyBehaviour>();
+                            enemyScript.speed = enemyScript.temp;
+                        }
                         pause = false;
                         break;
                     }
-                }
                 counter--;
                 yield return new WaitForSeconds(1.0f);
             }
         }
+        StopCoroutine(EnemyStop());
     }
 }

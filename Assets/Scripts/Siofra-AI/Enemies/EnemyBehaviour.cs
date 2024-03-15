@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
+using Unity.VisualScripting;
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
@@ -11,6 +12,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public List<Vector3> enemyPath = new List<Vector3>();
     public float health;
     public float speed;
+    public float temp;
 
     public Vector3 targetPosition;
     public int currentWaypoint = 0;
@@ -21,6 +23,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         health = enemyStats.health;
         speed = enemyStats.moveSpeed;
+        temp = speed;
 
         // agent = GetComponent<NavMeshAgent>();
         // agent.speed = enemyStats.moveSpeed;
@@ -87,5 +90,15 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             KillObject();
         }
+    }
+
+    public void ReduceSpeed()
+    {
+        speed = 0;
+    }
+
+    public void IncreaseSpeed()
+    {
+        speed = temp;
     }
 }

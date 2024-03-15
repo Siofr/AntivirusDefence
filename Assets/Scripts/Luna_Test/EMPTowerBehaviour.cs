@@ -5,23 +5,23 @@ using UnityEngine;
 public class EMPTowerBehaviour : MonoBehaviour
 {
     private TurretStats stats;
-    public List<GameObject> enemyList;
+    public List<GameObject> targetList;
 
     void Awake()
     {
         stats = GetComponent<DefenceStats>().defenceStats;
         GetComponent<CapsuleCollider>().radius = stats.defenceRange;
-        enemyList = new List<GameObject>();
+        targetList = new List<GameObject>();
     }
 
     void Update()
     {
-        if (enemyList.Count > 0)
+        if (targetList.Count > 0)
         {
             // If the first item of the list is null remove it (Cleans up killed enemies)
-            if (enemyList[0] == null)
+            if (targetList[0] == null)
             {
-                enemyList.RemoveAt(0);
+                targetList.RemoveAt(0);
             }
         }
     }
@@ -31,7 +31,7 @@ public class EMPTowerBehaviour : MonoBehaviour
         // If an enemy enters the range of the turret at it to a list
         if (other.gameObject.tag == "Enemy")
         {
-            enemyList.Add(other.gameObject);
+            targetList.Add(other.gameObject);
         }
     }
 
@@ -40,7 +40,7 @@ public class EMPTowerBehaviour : MonoBehaviour
         // If an enemy exits the range of the turret remove it from the list
         if (other.gameObject.tag == "Enemy")
         {
-            enemyList.Remove(other.gameObject);
+            targetList.Remove(other.gameObject);
         }
     }
 }
