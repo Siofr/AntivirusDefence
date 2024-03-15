@@ -15,8 +15,8 @@ MonoBehaviour:
   defenceName: Gatling Turret
   defenceDescription: A simple gatling gun that fires at enemies at a moderate rate
   defenceHealth: 25
-  defenceCost: 50
-  defenceRange: 4
+  defenceCost: 40
+  defenceRange: 5
   defenceDamage: 2
   defenceSplashRadius: 0
   defenceFireRate: 0.2
