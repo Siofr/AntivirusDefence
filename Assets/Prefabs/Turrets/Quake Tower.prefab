@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defenceStats: {fileID: 11400000, guid: 5561c5578ebe53946ac933bfbe77320c, type: 2}
-  upgradeUI: {fileID: 0}
+  upgradeUI: {fileID: 8884502114890094919}
   health: 0
 --- !u!114 &7041680601809421062
 MonoBehaviour:
@@ -411,6 +411,12 @@ PrefabInstance:
 --- !u!224 &3862539031735418809 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8859552207069339940, guid: d2b6c5b2ef0530d479e2bdbcb2819837,
+    type: 3}
+  m_PrefabInstance: {fileID: 5722119104845766301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8884502114890094919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3757438720537905114, guid: d2b6c5b2ef0530d479e2bdbcb2819837,
     type: 3}
   m_PrefabInstance: {fileID: 5722119104845766301}
   m_PrefabAsset: {fileID: 0}

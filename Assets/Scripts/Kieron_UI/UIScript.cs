@@ -93,6 +93,14 @@ public class UIScript : MonoBehaviour
         }
     }
 
+    public void UnselectTarget()
+    {
+        target = null;
+        targetTile = null;
+        targetTower = null;
+        targetMalware = null;
+    }
+
     public void UpdateTargetInfo()
     {
         switch (target.tag)
@@ -129,6 +137,7 @@ public class UIScript : MonoBehaviour
                     targetHealthBar.value = targetTower.towerCurrentHealth;
                     targetSpeed.gameObject.SetActive(false);*/
 
+                    //target.GetComponentInParent</*TowerScript*/DefenceStats>().upgradeUI.SetActive(true);
                     targetTower = target.GetComponentInParent<DefenceStats>().defenceStats;
                     targetName.text = targetTower.defenceName;
                     targetCost.text = targetTower.defenceCost.ToString();
@@ -195,6 +204,7 @@ public class UIScript : MonoBehaviour
                 if(target.GetComponent<DefenceStats>())
                 {
                     infoBox.SetActive(true);
+                    //target.GetComponent</*TowerScript*/DefenceStats>().upgradeUI.SetActive(true);
                     targetTower = target.GetComponent<DefenceStats>().defenceStats;
                     targetName.text = targetTower.defenceName;
                     targetCost.text = targetTower.defenceCost.ToString();
