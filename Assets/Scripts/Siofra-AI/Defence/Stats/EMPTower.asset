@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EMPTower
   m_EditorClassIdentifier: 
   defenceName: EMP Tower
-  defenceDescription: 
+  defenceDescription: Tower that uses Voice Controls to stun enemies
   defenceHealth: 25
   defenceCost: 40
   defenceRange: 4.5

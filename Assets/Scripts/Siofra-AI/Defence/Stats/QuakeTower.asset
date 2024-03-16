@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: QuakeTower
   m_EditorClassIdentifier: 
   defenceName: Quake Tower
-  defenceDescription: 
+  defenceDescription: Tower That Uses Shake Controls to damage Enemies
   defenceHealth: 25
   defenceCost: 40
   defenceRange: 4.5
   defenceDamage: 2
+  defenceSplashRadius: 0
   defenceFireRate: 0.1
   chargeTime: 5
