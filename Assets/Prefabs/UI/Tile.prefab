@@ -1404,8 +1404,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5745100576203664360}
         m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
-        m_MethodName: ChangeUI
-        m_Mode: 6
+        m_MethodName: UnselectTarget
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

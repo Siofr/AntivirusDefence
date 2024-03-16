@@ -40,9 +40,12 @@ public class TileScript : MonoBehaviour
         }
     }
 
-    public void ChangeUI(bool change)
+    public void UnselectTarget()
     {
-        showUI = change;
+        UI.target = null;
+        //UI.targetTile = null;
+        //UI.targetTower = null;
+        //UI.targetMalware = null;
     }
 
     public void BuildTower(GameObject chosenTower)

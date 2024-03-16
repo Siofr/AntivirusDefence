@@ -35,7 +35,9 @@ public class InteractionScript : MonoBehaviour
                                         UI.target.GetComponent<TileScript>().tileUI.SetActive(false);
                                     }
                                 }
+                                //UI.target.GetComponent<DefenceStats>().upgradeUI.SetActive(false);
                                 UI.target = target.GetComponent<TileScript>().tower;
+                                UI.target.GetComponent<DefenceStats>().upgradeUI.SetActive(true);
                             }
                             else
                             {
@@ -51,6 +53,11 @@ public class InteractionScript : MonoBehaviour
                         }
                         else
                         {
+                            if(target.GetComponentInParent<DefenceStats>())
+                            {
+                                //UI.target.GetComponentInParent<DefenceStats>().upgradeUI.SetActive(false);
+                                target.GetComponentInParent<DefenceStats>().upgradeUI.SetActive(true);
+                            }
                             UI.target = target;
                         }
                         
